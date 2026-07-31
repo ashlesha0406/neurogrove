@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Phase 2: Building Writing | NeuroGrove</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=Inter:wght@100..900&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "error-container": "#ffdad6",
+                    "on-background": "#191c1d",
+                    "tertiary": "#605584",
+                    "on-tertiary-fixed": "#1f133f",
+                    "on-primary-container": "#fefcff",
+                    "surface-container-high": "#e7e8e9",
+                    "primary-container": "#5371c2",
+                    "on-tertiary": "#ffffff",
+                    "primary": "#3958a7",
+                    "background": "#f8f9fa",
+                    "tertiary-fixed": "#e8ddff",
+                    "on-secondary": "#ffffff",
+                    "surface-container-highest": "#e1e3e4",
+                    "on-secondary-fixed": "#002110",
+                    "on-primary-fixed": "#001849",
+                    "on-error-container": "#93000a",
+                    "secondary-fixed-dim": "#98d4ac",
+                    "surface-tint": "#3b5ba9",
+                    "on-primary": "#ffffff",
+                    "inverse-on-surface": "#f0f1f2",
+                    "on-secondary-fixed-variant": "#165132",
+                    "on-error": "#ffffff",
+                    "surface-variant": "#e1e3e4",
+                    "tertiary-fixed-dim": "#cdbff5",
+                    "secondary-fixed": "#b4f0c7",
+                    "outline": "#747682",
+                    "surface": "#f8f9fa",
+                    "primary-fixed": "#dae1ff",
+                    "on-surface": "#191c1d",
+                    "surface-bright": "#f8f9fa",
+                    "surface-container": "#edeeef",
+                    "on-surface-variant": "#444651",
+                    "outline-variant": "#c4c6d3",
+                    "on-primary-fixed-variant": "#204290",
+                    "on-tertiary-container": "#fffbff",
+                    "secondary-container": "#b1edc4",
+                    "surface-container-low": "#f3f4f5",
+                    "on-secondary-container": "#356e4c",
+                    "primary-fixed-dim": "#b3c5ff",
+                    "surface-dim": "#d9dadb",
+                    "secondary": "#316948",
+                    "inverse-surface": "#2e3132",
+                    "on-tertiary-fixed-variant": "#4b406d",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary-container": "#7a6d9e",
+                    "error": "#ba1a1a",
+                    "inverse-primary": "#b3c5ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-mobile": "16px",
+                    "margin-desktop": "40px",
+                    "section-gap": "80px",
+                    "container-max-width": "1200px",
+                    "gutter": "24px",
+                    "unit": "8px"
+            },
+            "fontFamily": {
+                    "display-lg": ["Montserrat"],
+                    "label-sm": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-md": ["Montserrat"],
+                    "display-lg-mobile": ["Montserrat"],
+                    "body-md": ["Inter"]
+            },
+            "fontSize": {
+                    "display-lg": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "label-sm": ["13px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0.02em", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                    "display-lg-mobile": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "letterSpacing": "0.01em", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .atmospheric-shadow {
+            box-shadow: 0 20px 40px rgba(57, 88, 167, 0.05);
+        }
+        html { scroll-behavior: smooth; }
+        input[type="checkbox"].check-item {
+            accent-color: #3958a7;
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+        }
+        .checklist-row:has(input:checked) {
+            background-color: rgba(177, 237, 196, 0.35);
+        }
+        .checklist-row:has(input:checked) .checklist-label {
+            text-decoration: line-through;
+            text-decoration-color: rgba(49, 105, 72, 0.55);
+        }
+</style>
+</head>
+
+<body class="bg-surface font-body-md text-on-surface">
+<div class="w-full bg-surface-container-low border-b border-outline-variant/40">
+<div class="max-w-container-max-width mx-auto px-margin-desktop py-4 flex items-center gap-2 text-label-sm font-label-sm text-on-surface-variant flex-wrap">
+<a class="hover:text-primary transition-colors" href="index.html">NeuroGrove</a><span class="material-symbols-outlined text-[16px] text-outline">chevron_right</span><a class="hover:text-primary transition-colors" href="gestalt-language-processing.html">Gestalt Language Processing</a><span class="material-symbols-outlined text-[16px] text-outline">chevron_right</span><span class="text-primary font-semibold">Phase 2: Writing</span>
+</div>
+</div>
+<div class="sticky top-0 z-40 bg-surface/95 backdrop-blur-sm border-b border-outline-variant/40">
+<div class="max-w-container-max-width mx-auto px-margin-desktop py-3 flex gap-3 overflow-x-auto">
+<a class="shrink-0 px-4 py-2 rounded-full bg-surface-container-lowest text-on-surface-variant hover:bg-primary hover:text-white transition-colors text-label-sm font-label-sm border border-outline-variant/50" href="#overview">Overview</a>
+<a class="shrink-0 px-4 py-2 rounded-full bg-surface-container-lowest text-on-surface-variant hover:bg-primary hover:text-white transition-colors text-label-sm font-label-sm border border-outline-variant/50" href="#assessment">Find her level</a>
+<a class="shrink-0 px-4 py-2 rounded-full bg-surface-container-lowest text-on-surface-variant hover:bg-primary hover:text-white transition-colors text-label-sm font-label-sm border border-outline-variant/50" href="#bridge-1-2">Level 1→2</a>
+<a class="shrink-0 px-4 py-2 rounded-full bg-surface-container-lowest text-on-surface-variant hover:bg-primary hover:text-white transition-colors text-label-sm font-label-sm border border-outline-variant/50" href="#bridge-2-3">Level 2→3</a>
+<a class="shrink-0 px-4 py-2 rounded-full bg-surface-container-lowest text-on-surface-variant hover:bg-primary hover:text-white transition-colors text-label-sm font-label-sm border border-outline-variant/50" href="#bridge-3-4">Level 3→4</a>
+<a class="shrink-0 px-4 py-2 rounded-full bg-surface-container-lowest text-on-surface-variant hover:bg-primary hover:text-white transition-colors text-label-sm font-label-sm border border-outline-variant/50" href="#bridge-4-5">Level 4→5 · Mastery</a>
+</div>
+</div>
+<main>
+<section id="overview" class="bg-surface-container-lowest py-section-gap scroll-mt-16">
+<div class="max-w-container-max-width mx-auto px-margin-desktop">
+<span class="text-label-sm font-label-sm text-secondary uppercase tracking-widest">Phase 2</span>
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-secondary tracking-tight mt-2 mb-6 max-w-3xl">Building Writing (Expressive Literacy)</h1>
+<p class="text-body-lg text-on-surface-variant max-w-3xl leading-relaxed mb-2">Writing for a non-verbal child does not need to start with handwriting or holding a pencil, which can present motor-planning (dyspraxia) hurdles. Start with low-tech or digital construction tools instead.</p>
+<p class="text-body-md text-on-surface-variant max-w-3xl leading-relaxed">This 5-level framework moves from sensory scribbling with no intentional structure, all the way to spontaneous, independent written thoughts &mdash; with activities and checklists for every transition in between.</p>
+</div>
+</section>
+
+<section class="py-section-gap max-w-container-max-width mx-auto px-margin-desktop">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-2">Phase 2 Evaluation Framework: 5 Skill Levels</h2>
+<p class="text-on-surface-variant text-body-md mb-8">A quick map of the whole journey, from random sensory marks to independently written multi-word thoughts.</p>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-gutter">
+<div class="bg-surface-container-lowest p-6 rounded-[16px] atmospheric-shadow">
+<div class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-headline-md text-[16px] font-semibold mb-4">1</div>
+<h3 class="font-headline-md text-[18px] text-primary mb-2">Pre-Motor / Random Scribbler</h3>
+<p class="text-on-surface-variant text-body-md text-[15px]">Makes marks on paper or taps on a keyboard, but without intentional letter/word structure; treats writing tools purely as sensory objects (banging crayons, scribbling off the page).</p>
+</div><div class="bg-surface-container-lowest p-6 rounded-[16px] atmospheric-shadow">
+<div class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-headline-md text-[16px] font-semibold mb-4">2</div>
+<h3 class="font-headline-md text-[18px] text-primary mb-2">Target Constructive Communicator</h3>
+<p class="text-on-surface-variant text-body-md text-[15px]">Uses physical drag-and-drop or velcro word blocks to independently select and place 1 single target word to express a direct desire or thought.</p>
+</div><div class="bg-surface-container-lowest p-6 rounded-[16px] atmospheric-shadow">
+<div class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-headline-md text-[16px] font-semibold mb-4">3</div>
+<h3 class="font-headline-md text-[18px] text-primary mb-2">Structured Frame Builder</h3>
+<p class="text-on-surface-variant text-body-md text-[15px]">Assembles 2-to-3 word Gestalt phrases independently using physical word tiles or an AAC/digital grid (e.g., placing [ I WANT ] + [ JUICE ] together to make a request).</p>
+</div><div class="bg-surface-container-lowest p-6 rounded-[16px] atmospheric-shadow">
+<div class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-headline-md text-[16px] font-semibold mb-4">4</div>
+<h3 class="font-headline-md text-[18px] text-primary mb-2">Emergent Letter & Word Producer</h3>
+<p class="text-on-surface-variant text-body-md text-[15px]">Traces, copies, or types out familiar target words (like her name or top interest words) using adaptive grip tools, keyboard typing, or sensory tracing mediums.</p>
+</div><div class="bg-surface-container-lowest p-6 rounded-[16px] atmospheric-shadow">
+<div class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-headline-md text-[16px] font-semibold mb-4">5</div>
+<h3 class="font-headline-md text-[18px] text-primary mb-2">Independent Expressive Writer (Phase 2 Master)</h3>
+<p class="text-on-surface-variant text-body-md text-[15px]">Spontaneously constructs original multi-word thoughts, answers questions, or writes stories using alternative writing setups (keyboard, word banks, or handwriting) without visual templates or prompts.</p>
+</div>
+</div>
+</section>
+
+<section id="assessment" class="bg-surface-container-low py-section-gap scroll-mt-16">
+<div class="max-w-container-max-width mx-auto px-margin-desktop">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-2">Find Her Starting Point</h2>
+<p class="text-on-surface-variant text-body-md mb-8 max-w-3xl">Check off the behaviors she displays consistently. The highest level where all or most boxes are checked is her baseline for Phase 2.</p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter"><div id="p2-level-1" data-checklist class="bg-surface-container-lowest rounded-[16px] atmospheric-shadow p-6 scroll-mt-24">
+<div class="flex items-center justify-between mb-3 gap-3 flex-wrap">
+<h3 class="font-headline-md text-[18px] text-primary">Level 1: Pre-Motor / Random Scribbler</h3>
+<span data-progress-text class="text-label-sm font-label-sm text-on-surface-variant"></span>
+</div>
+<div class="w-full h-2 bg-surface-variant rounded-full overflow-hidden mb-4">
+<div data-progress-bar class="h-full bg-secondary transition-all duration-300" style="width:0%"></div>
+</div>
+<div class="space-y-1">
+<label class="checklist-row flex items-start gap-3 p-3 rounded-lg transition-colors cursor-pointer">
+<input class="check-item mt-0.5" type="checkbox">
+<span class="checklist-label text-on-surface-variant text-body-md text-[15px]">Enjoys making sensory marks on paper, whiteboards, or trays, but without forming letters or recognizable shapes.</span>
+</label>
+<label class="checklist-row flex items-start gap-3 p-3 rounded-lg transition-colors cursor-pointer">
+<input class="check-item mt-0.5" type="checkbox">
+<span class="checklist-label text-on-surface-variant text-body-md text-[15px]">Taps randomly on a keyboard or screen without intent to build words.</span>
+</label>
+</div>
+</div><div id="p2-level-2" data-checklist class="bg-surface-container-lowest rounded-[16px] atmospheric-shadow p-6 scroll-mt-24">
+<div class="flex items-center justify-between mb-3 gap-3 flex-wrap">
+<h3 class="font-headline-md text-[18px] text-primary">Level 2: Target Constructive Communicator</h3>
+<span data-progress-text class="text-label-sm font-label-sm text-on-surface-variant"></span>
+</div>
+<div class="w-full h-2 bg-surface-variant rounded-full overflow-hidden mb-4">
+<div data-progress-bar class="h-full bg-secondary transition-all duration-300" style="width:0%"></div>
+</div>
+<div class="space-y-1">
+<label class="checklist-row flex items-start gap-3 p-3 rounded-lg transition-colors cursor-pointer">
+<input class="check-item mt-0.5" type="checkbox">
+<span class="checklist-label text-on-surface-variant text-body-md text-[15px]">Pulls 1 specific target word tile (e.g., JUICE) off a board and hands it to you or places it in a blank space to make a request.</span>
+</label>
+<label class="checklist-row flex items-start gap-3 p-3 rounded-lg transition-colors cursor-pointer">
+<input class="check-item mt-0.5" type="checkbox">
+<span class="checklist-label text-on-surface-variant text-body-md text-[15px]">Uses physical drag-and-drop on a tablet to move a target word into position.</span>
+</label>
+</div>
+</div><div id="p2-level-3" data-checklist class="bg-surface-container-lowest rounded-[16px] atmospheric-shadow p-6 scroll-mt-24">
+<div class="flex items-center justify-between mb-3 gap-3 flex-wrap">
+<h3 class="font-headline-md text-[18px] text-primary">Level 3: Structured Frame Builder</h3>
+<span data-progress-text class="text-label-sm font-label-sm text-on-surface-variant"></span>
+</div>
+<div class="w-full h-2 bg-surface-variant rounded-full overflow-hidden mb-4">
+<div data-progress-bar class="h-full bg-secondary transition-all duration-300" style="width:0%"></div>
+</div>
+<div class="space-y-1">
+<label class="checklist-row flex items-start gap-3 p-3 rounded-lg transition-colors cursor-pointer">
+<input class="check-item mt-0.5" type="checkbox">
+<span class="checklist-label text-on-surface-variant text-body-md text-[15px]">Independently combines a carrier block (I WANT / I SEE) with a target word tile to create a complete 2–3 word sentence strip.</span>
+</label>
+<label class="checklist-row flex items-start gap-3 p-3 rounded-lg transition-colors cursor-pointer">
+<input class="check-item mt-0.5" type="checkbox">
+<span class="checklist-label text-on-surface-variant text-body-md text-[15px]">Uses an AAC grid or text-based app to build phrases by tapping/dragging whole words in left-to-right order.</span>
+</label>
+</div>
+</div><div id="p2-level-4" data-checklist class="bg-surface-container-lowest rounded-[16px] atmospheric-shadow p-6 scroll-mt-24">
+<div class="flex items-center justify-between mb-3 gap-3 flex-wrap">
+<h3 class="font-headline-md text-[18px] text-primary">Level 4: Emergent Letter & Word Producer</h3>
+<span data-progress-text class="text-label-sm font-label-sm text-on-surface-variant"></span>
+</div>
+<div class="w-full h-2 bg-surface-variant rounded-full overflow-hidden mb-4">
+<div data-progress-bar class="h-full bg-secondary transition-all duration-300" style="width:0%"></div>
+</div>
+<div class="space-y-1">
+<label class="checklist-row flex items-start gap-3 p-3 rounded-lg transition-colors cursor-pointer">
+<input class="check-item mt-0.5" type="checkbox">
+<span class="checklist-label text-on-surface-variant text-body-md text-[15px]">Traces or copies her name and 3–5 core target words on paper, whiteboards, or sensory trays.</span>
+</label>
+<label class="checklist-row flex items-start gap-3 p-3 rounded-lg transition-colors cursor-pointer">
+<input class="check-item mt-0.5" type="checkbox">
+<span class="checklist-label text-on-surface-variant text-body-md text-[15px]">Types out familiar target words on a physical keyboard when a visual model is nearby.</span>
+</label>
+</div>
+</div><div id="p2-level-5" data-checklist class="bg-surface-container-lowest rounded-[16px] atmospheric-shadow p-6 scroll-mt-24">
+<div class="flex items-center justify-between mb-3 gap-3 flex-wrap">
+<h3 class="font-headline-md text-[18px] text-primary">Level 5: Independent Expressive Writer (Phase 2 Master)</h3>
+<span data-progress-text class="text-label-sm font-label-sm text-on-surface-variant"></span>
+</div>
+<div class="w-full h-2 bg-surface-variant rounded-full overflow-hidden mb-4">
+<div data-progress-bar class="h-full bg-secondary transition-all duration-300" style="width:0%"></div>
+</div>
+<div class="space-y-1">
+<label class="checklist-row flex items-start gap-3 p-3 rounded-lg transition-colors cursor-pointer">
+<input class="check-item mt-0.5" type="checkbox">
+<span class="checklist-label text-on-surface-variant text-body-md text-[15px]">Spontaneously types or builds original 3+ word sentences to comment, answer questions, or express needs without copying a visual model.</span>
+</label>
+<label class="checklist-row flex items-start gap-3 p-3 rounded-lg transition-colors cursor-pointer">
+<input class="check-item mt-0.5" type="checkbox">
+<span class="checklist-label text-on-surface-variant text-body-md text-[15px]">Uses a combination of typing, word-prediction, or handwriting to communicate complex thoughts flexibly.</span>
+</label>
+</div>
+</div></div>
+</div>
+</section>
+
+<section id="bridge-1-2" class="py-section-gap max-w-container-max-width mx-auto px-margin-desktop scroll-mt-16">
+<span class="text-label-sm font-label-sm text-primary uppercase tracking-widest">Level 1 → Level 2</span>
+<h2 class="font-headline-md text-headline-md text-on-surface mt-1 mb-6">From Sensory Scribbling to Single-Word Placement</h2>
+<div class="bg-primary-fixed/25 border border-primary-fixed rounded-[16px] p-6 mb-8 grid grid-cols-1 md:grid-cols-2 gap-4">
+<div>
+<p class="text-label-sm font-label-sm text-on-primary-fixed-variant uppercase tracking-wide mb-1">Goal</p>
+<p class="text-on-surface text-body-md">Bypassing motor frustration. Teaching her that physically picking up or sliding a 2D word tile expresses a specific thought.</p>
+</div>
+<div>
+<p class="text-label-sm font-label-sm text-on-primary-fixed-variant uppercase tracking-wide mb-1">Rule</p>
+<p class="text-on-surface text-body-md">Use thick, solid wooden tiles, velcro cards, or high-contrast tablet apps. Zero emphasis on pencil grip.</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter mb-8">
+<div class="bg-surface-container-lowest rounded-[16px] atmospheric-shadow p-6 flex flex-col">
+<div class="w-9 h-9 rounded-full bg-primary-container/15 text-primary flex items-center justify-center font-semibold mb-3">1</div>
+<h4 class="font-headline-md text-[17px] text-on-surface mb-2">The "Peel & Place" Requesting Board</h4>
+<p class="text-label-sm font-label-sm text-outline uppercase tracking-wide mb-1">Setup</p>
+<p class="text-on-surface-variant text-body-md text-[15px] mb-3">A laminated board with a velcro strip on the bottom. Keep 2 target word tiles (JUICE, PARK) on top.</p>
+<p class="text-label-sm font-label-sm text-outline uppercase tracking-wide mb-1">How to play</p>
+<ol class="list-decimal list-inside space-y-1 text-on-surface-variant text-body-md text-[15px]">
+<li class="pl-1">When she wants an item, guide her to peel the specific tile (JUICE) from the top and stick it onto the bottom strip before handing you the board.</li>
+<li class="pl-1">Immediately fulfill the request.</li>
+</ol>
+
+</div>
+<div class="bg-surface-container-lowest rounded-[16px] atmospheric-shadow p-6 flex flex-col">
+<div class="w-9 h-9 rounded-full bg-primary-container/15 text-primary flex items-center justify-center font-semibold mb-3">2</div>
+<h4 class="font-headline-md text-[17px] text-on-surface mb-2">The "Sliding Tile" Drag-and-Drop</h4>
+<p class="text-label-sm font-label-sm text-outline uppercase tracking-wide mb-1">Setup</p>
+<p class="text-on-surface-variant text-body-md text-[15px] mb-3">On a tablet screen (or magnetic whiteboard), place 2 large word blocks at the top (SWING, MUSIC) and a target box at the bottom.</p>
+<p class="text-label-sm font-label-sm text-outline uppercase tracking-wide mb-1">How to play</p>
+<ol class="list-decimal list-inside space-y-1 text-on-surface-variant text-body-md text-[15px]">
+<li class="pl-1">Have her use her index finger to physically slide the correct word block straight down into the target box to activate the music or activity.</li>
+</ol>
+
+</div>
+<div class="bg-surface-container-lowest rounded-[16px] atmospheric-shadow p-6 flex flex-col">
+<div class="w-9 h-9 rounded-full bg-primary-container/15 text-primary flex items-center justify-center font-semibold mb-3">3</div>
+<h4 class="font-headline-md text-[17px] text-on-surface mb-2">Sensory Name & Word Stamping</h4>
+<p class="text-label-sm font-label-sm text-outline uppercase tracking-wide mb-1">Setup</p>
+<p class="text-on-surface-variant text-body-md text-[15px] mb-3">Large letter stamps or rubber word blocks with a washable ink pad / play-dough.</p>
+<p class="text-label-sm font-label-sm text-outline uppercase tracking-wide mb-1">How to play</p>
+<ol class="list-decimal list-inside space-y-1 text-on-surface-variant text-body-md text-[15px]">
+<li class="pl-1">Let her press full word stamps directly into play-dough or paper.</li>
+<li class="pl-1">This bridges physical touch with creating clear printed text output effortlessly.</li>
+</ol>
+
+</div>
+</div>
+<div id="bridge-1-2-checklist" data-checklist class="bg-secondary-container/25 border border-secondary/30 rounded-[16px] p-6 scroll-mt-24">
+<div class="flex items-center justify-between gap-3 flex-wrap mb-1">
+<h4 class="font-headline-md text-[18px] text-secondary">Level 2 Qualification Checklist</h4>
+<span data-progress-text class="text-label-sm font-label-sm text-secondary"></span>
+</div>
+<p class="text-on-surface-variant text-body-md text-[15px] mb-3">She has reached Level 2 when she can consistently pass these 3 checkpoints:</p>
+<div class="w-full h-2 bg-white/60 rounded-full overflow-hidden mb-4">
+<div data-progress-bar class="h-full bg-secondary transition-all duration-300" style="width:0%"></div>
+</div>
+<div class="space-y-1 mb-2">
+<label class="checklist-row flex items-start gap-3 p-3 rounded-lg transition-colors cursor-pointer">
+<input class="check-item mt-0.5" type="checkbox">
+<span class="checklist-label text-body-md text-[15px]"><span class="font-semibold text-on-surface">Single-Tile Placement</span><br><span class="text-on-surface-variant">Independently peels or slides 1 specific target word tile onto a communication board to express a need.</span></span>
+</label>
+<label class="checklist-row flex items-start gap-3 p-3 rounded-lg transition-colors cursor-pointer">
+<input class="check-item mt-0.5" type="checkbox">
+<span class="checklist-label text-body-md text-[15px]"><span class="font-semibold text-on-surface">Intentional Choice via Text</span><br><span class="text-on-surface-variant">Selects the correct physical word tile when 2 options are presented, showing intent rather than random reaching.</span></span>
+</label>
+<label class="checklist-row flex items-start gap-3 p-3 rounded-lg transition-colors cursor-pointer">
+<input class="check-item mt-0.5" type="checkbox">
+<span class="checklist-label text-body-md text-[15px]"><span class="font-semibold text-on-surface">Functional Output Understanding</span><br><span class="text-on-surface-variant">Understands that placing a tile onto a board triggers a real-world reaction from an adult.</span></span>
+</label>
+</div>
+<div data-progress-badge class="hidden mt-3 inline-flex items-center gap-2 bg-secondary text-on-secondary px-4 py-2 rounded-full text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-[18px]">celebration</span>Level 2 reached — ready to build sentence strips!
+</div>
+</div>
+</section>
+<section id="bridge-2-3" class="py-section-gap max-w-container-max-width mx-auto px-margin-desktop scroll-mt-16">
+<span class="text-label-sm font-label-sm text-primary uppercase tracking-widest">Level 2 → Level 3</span>
+<h2 class="font-headline-md text-headline-md text-on-surface mt-1 mb-6">From Single Words to Sentence Strip Construction</h2>
+<div class="bg-primary-fixed/25 border border-primary-fixed rounded-[16px] p-6 mb-8 grid grid-cols-1 md:grid-cols-2 gap-4">
+<div>
+<p class="text-label-sm font-label-sm text-on-primary-fixed-variant uppercase tracking-wide mb-1">Goal</p>
+<p class="text-on-surface text-body-md">Constructing multi-word Gestalt phrases by joining blocks together left-to-right.</p>
+</div>
+<div>
+<p class="text-label-sm font-label-sm text-on-primary-fixed-variant uppercase tracking-wide mb-1">Rule</p>
+<p class="text-on-surface text-body-md">Carrier blocks ([ I WANT ], [ I SEE ], [ LET'S GO ]) stay intact as single unified pieces.</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter mb-8">
+<div class="bg-surface-container-lowest rounded-[16px] atmospheric-shadow p-6 flex flex-col">
+<div class="w-9 h-9 rounded-full bg-primary-container/15 text-primary flex items-center justify-center font-semibold mb-3">1</div>
+<h4 class="font-headline-md text-[17px] text-on-surface mb-2">The "Snap-Together" Sentence Train</h4>
+<p class="text-label-sm font-label-sm text-outline uppercase tracking-wide mb-1">Setup</p>
+<p class="text-on-surface-variant text-body-md text-[15px] mb-3">Use interlocking blocks (like Duplo/Lego) with printed word labels taped to the side. Green block = [ I WANT ], Blue block = [ WATER ].</p>
+<p class="text-label-sm font-label-sm text-outline uppercase tracking-wide mb-1">How to play</p>
+<ol class="list-decimal list-inside space-y-1 text-on-surface-variant text-body-md text-[15px]">
+<li class="pl-1">Guide her to snap the Green carrier block and Blue target block together side-by-side from left to right.</li>
+<li class="pl-1">Once snapped together, read the full phrase aloud and hand her the water.</li>
+</ol>
+
+</div>
+<div class="bg-surface-container-lowest rounded-[16px] atmospheric-shadow p-6 flex flex-col">
+<div class="w-9 h-9 rounded-full bg-primary-container/15 text-primary flex items-center justify-center font-semibold mb-3">2</div>
+<h4 class="font-headline-md text-[17px] text-on-surface mb-2">Predictable Chart Writing (Fill-in-the-Blank)</h4>
+<p class="text-label-sm font-label-sm text-outline uppercase tracking-wide mb-1">Setup</p>
+<p class="text-on-surface-variant text-body-md text-[15px] mb-3">A large poster chart with repetitive fixed lines, e.g. "I SEE [ _____ ]." repeated down the page.</p>
+<p class="text-label-sm font-label-sm text-outline uppercase tracking-wide mb-1">How to play</p>
+<ol class="list-decimal list-inside space-y-1 text-on-surface-variant text-body-md text-[15px]">
+<li class="pl-1">During a walk or video, pause and give her 3 target word tiles (BLUEY, CAR, DOG).</li>
+<li class="pl-1">She places her chosen tile into the blank box to finish the line, and you read the completed page together.</li>
+</ol>
+
+</div>
+<div class="bg-surface-container-lowest rounded-[16px] atmospheric-shadow p-6 flex flex-col">
+<div class="w-9 h-9 rounded-full bg-primary-container/15 text-primary flex items-center justify-center font-semibold mb-3">3</div>
+<h4 class="font-headline-md text-[17px] text-on-surface mb-2">Digital Grid Construction (Low-Tech AAC / Text-to-Speech)</h4>
+<p class="text-label-sm font-label-sm text-outline uppercase tracking-wide mb-1">Setup</p>
+<p class="text-on-surface-variant text-body-md text-[15px] mb-3">Use a tablet app set to a high-contrast grid where buttons contain full printed words (e.g., [ I LIKE ], [ MUSIC ]).</p>
+<p class="text-label-sm font-label-sm text-outline uppercase tracking-wide mb-1">How to play</p>
+<ol class="list-decimal list-inside space-y-1 text-on-surface-variant text-body-md text-[15px]">
+<li class="pl-1">She taps [ I LIKE ] and then [ MUSIC ].</li>
+<li class="pl-1">The app speaks the full phrase aloud. This connects visual word building directly with artificial voice generation.</li>
+</ol>
+
+</div>
+</div>
+<div id="bridge-2-3-checklist" data-checklist class="bg-secondary-container/25 border border-secondary/30 rounded-[16px] p-6 scroll-mt-24">
+<div class="flex items-center justify-between gap-3 flex-wrap mb-1">
+<h4 class="font-headline-md text-[18px] text-secondary">Level 3 Qualification Checklist</h4>
+<span data-progress-text class="text-label-sm font-label-sm text-secondary"></span>
+</div>
+<p class="text-on-surface-variant text-body-md text-[15px] mb-3">She has reached Level 3 when she can consistently pass these 3 checkpoints:</p>
+<div class="w-full h-2 bg-white/60 rounded-full overflow-hidden mb-4">
+<div data-progress-bar class="h-full bg-secondary transition-all duration-300" style="width:0%"></div>
+</div>
+<div class="space-y-1 mb-2">
+<label class="checklist-row flex items-start gap-3 p-3 rounded-lg transition-colors cursor-pointer">
+<input class="check-item mt-0.5" type="checkbox">
+<span class="checklist-label text-body-md text-[15px]"><span class="font-semibold text-on-surface">Multi-Block Assembly</span><br><span class="text-on-surface-variant">Independently connects a carrier block and a target word tile to build a complete 2–3 word sentence strip.</span></span>
+</label>
+<label class="checklist-row flex items-start gap-3 p-3 rounded-lg transition-colors cursor-pointer">
+<input class="check-item mt-0.5" type="checkbox">
+<span class="checklist-label text-body-md text-[15px]"><span class="font-semibold text-on-surface">Left-to-Right Sequential Placement</span><br><span class="text-on-surface-variant">Places the carrier block first (on the left) and the target word second (on the right) without scrambling the order.</span></span>
+</label>
+<label class="checklist-row flex items-start gap-3 p-3 rounded-lg transition-colors cursor-pointer">
+<input class="check-item mt-0.5" type="checkbox">
+<span class="checklist-label text-body-md text-[15px]"><span class="font-semibold text-on-surface">Spontaneous Phrase Building</span><br><span class="text-on-surface-variant">Uses a sentence strip board or digital grid spontaneously during daily routines to communicate a desire or observation.</span></span>
+</label>
+</div>
+<div data-progress-badge class="hidden mt-3 inline-flex items-center gap-2 bg-secondary text-on-secondary px-4 py-2 rounded-full text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-[18px]">celebration</span>Level 3 reached — ready to build letters and words!
+</div>
+</div>
+</section>
+<section id="bridge-3-4" class="py-section-gap max-w-container-max-width mx-auto px-margin-desktop scroll-mt-16">
+<span class="text-label-sm font-label-sm text-primary uppercase tracking-widest">Level 3 → Level 4</span>
+<h2 class="font-headline-md text-headline-md text-on-surface mt-1 mb-6">From Whole Blocks to Tracing, Typing & Letter Production</h2>
+<div class="bg-primary-fixed/25 border border-primary-fixed rounded-[16px] p-6 mb-8 grid grid-cols-1 md:grid-cols-2 gap-4">
+<div>
+<p class="text-label-sm font-label-sm text-on-primary-fixed-variant uppercase tracking-wide mb-1">Goal</p>
+<p class="text-on-surface text-body-md">Transitioning from selecting whole pre-made word blocks to building words out of letters via typing, tracing, or adaptive writing.</p>
+</div>
+<div>
+<p class="text-label-sm font-label-sm text-on-primary-fixed-variant uppercase tracking-wide mb-1">Rule</p>
+<p class="text-on-surface text-body-md">Never force traditional handwriting grips if motor fatigue occurs. Typing on a keyboard is 100% valid expressive writing.</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter mb-8">
+<div class="bg-surface-container-lowest rounded-[16px] atmospheric-shadow p-6 flex flex-col">
+<div class="w-9 h-9 rounded-full bg-primary-container/15 text-primary flex items-center justify-center font-semibold mb-3">1</div>
+<h4 class="font-headline-md text-[17px] text-on-surface mb-2">Keyboard Target Typing (Visual Model Copying)</h4>
+<p class="text-label-sm font-label-sm text-outline uppercase tracking-wide mb-1">Setup</p>
+<p class="text-on-surface-variant text-body-md text-[15px] mb-3">A physical computer keyboard or tablet with large-key layout. Place a clear word card (J-U-I-C-E) on top of the screen/monitor.</p>
+<p class="text-label-sm font-label-sm text-outline uppercase tracking-wide mb-1">How to play</p>
+<ol class="list-decimal list-inside space-y-1 text-on-surface-variant text-body-md text-[15px]">
+<li class="pl-1">She looks at the target card model and types the corresponding letters one by one into a large-font text editor.</li>
+<li class="pl-1">Every time she completes the word, hit the spacebar and have the screen read it aloud!</li>
+</ol>
+
+</div>
+<div class="bg-surface-container-lowest rounded-[16px] atmospheric-shadow p-6 flex flex-col">
+<div class="w-9 h-9 rounded-full bg-primary-container/15 text-primary flex items-center justify-center font-semibold mb-3">2</div>
+<h4 class="font-headline-md text-[17px] text-on-surface mb-2">Adaptive Grip Tracing (Whiteboard / Sand Trays)</h4>
+<p class="text-label-sm font-label-sm text-outline uppercase tracking-wide mb-1">Setup</p>
+<p class="text-on-surface-variant text-body-md text-[15px] mb-3">Use thick, weighted markers, egg-shaped crayons, or a finger in a tray of colored sand/shaving cream.</p>
+<p class="text-label-sm font-label-sm text-outline uppercase tracking-wide mb-1">How to play</p>
+<ol class="list-decimal list-inside space-y-1 text-on-surface-variant text-body-md text-[15px]">
+<li class="pl-1">Write her name or top target word (PARK) in large, thick yellow lines.</li>
+<li class="pl-1">Have her trace directly over the yellow lines using a dark marker or her finger, following the directional lines.</li>
+</ol>
+
+</div>
+<div class="bg-surface-container-lowest rounded-[16px] atmospheric-shadow p-6 flex flex-col">
+<div class="w-9 h-9 rounded-full bg-primary-container/15 text-primary flex items-center justify-center font-semibold mb-3">3</div>
+<h4 class="font-headline-md text-[17px] text-on-surface mb-2">Letter-Tile Word Assembly (Spelling Target Gestalts)</h4>
+<p class="text-label-sm font-label-sm text-outline uppercase tracking-wide mb-1">Setup</p>
+<p class="text-on-surface-variant text-body-md text-[15px] mb-3">Magnetic alphabet letters on a fridge/board and a target word template card with letter cutouts/boxes.</p>
+<p class="text-label-sm font-label-sm text-outline uppercase tracking-wide mb-1">How to play</p>
+<ol class="list-decimal list-inside space-y-1 text-on-surface-variant text-body-md text-[15px]">
+<li class="pl-1">Give her the target word template [ B ] [ L ] [ U ] [ E ] [ Y ].</li>
+<li class="pl-1">She finds the matching loose magnetic letter tiles and drops them into each corresponding box to spell the word from left to right.</li>
+</ol>
+
+</div>
+</div>
+<div id="bridge-3-4-checklist" data-checklist class="bg-secondary-container/25 border border-secondary/30 rounded-[16px] p-6 scroll-mt-24">
+<div class="flex items-center justify-between gap-3 flex-wrap mb-1">
+<h4 class="font-headline-md text-[18px] text-secondary">Level 4 Qualification Checklist</h4>
+<span data-progress-text class="text-label-sm font-label-sm text-secondary"></span>
+</div>
+<p class="text-on-surface-variant text-body-md text-[15px] mb-3">She has reached Level 4 when she can consistently pass these 3 checkpoints:</p>
+<div class="w-full h-2 bg-white/60 rounded-full overflow-hidden mb-4">
+<div data-progress-bar class="h-full bg-secondary transition-all duration-300" style="width:0%"></div>
+</div>
+<div class="space-y-1 mb-2">
+<label class="checklist-row flex items-start gap-3 p-3 rounded-lg transition-colors cursor-pointer">
+<input class="check-item mt-0.5" type="checkbox">
+<span class="checklist-label text-body-md text-[15px]"><span class="font-semibold text-on-surface">Keyboard Model Copying</span><br><span class="text-on-surface-variant">Types out familiar 4–6 letter target words on a keyboard when a visual word card is placed in front of her.</span></span>
+</label>
+<label class="checklist-row flex items-start gap-3 p-3 rounded-lg transition-colors cursor-pointer">
+<input class="check-item mt-0.5" type="checkbox">
+<span class="checklist-label text-body-md text-[15px]"><span class="font-semibold text-on-surface">Guided Tracing</span><br><span class="text-on-surface-variant">Traces over letter lines for her name and core target words on whiteboards, sand trays, or paper.</span></span>
+</label>
+<label class="checklist-row flex items-start gap-3 p-3 rounded-lg transition-colors cursor-pointer">
+<input class="check-item mt-0.5" type="checkbox">
+<span class="checklist-label text-body-md text-[15px]"><span class="font-semibold text-on-surface">Sequential Letter Assembly</span><br><span class="text-on-surface-variant">Matches individual letter tiles to a template to assemble her core target words from left to right.</span></span>
+</label>
+</div>
+<div data-progress-badge class="hidden mt-3 inline-flex items-center gap-2 bg-secondary text-on-secondary px-4 py-2 rounded-full text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-[18px]">celebration</span>Level 4 reached — ready for independent writing!
+</div>
+</div>
+</section>
+<section id="bridge-4-5" class="py-section-gap max-w-container-max-width mx-auto px-margin-desktop scroll-mt-16">
+<span class="text-label-sm font-label-sm text-primary uppercase tracking-widest">Level 4 → Level 5 · Phase 2 Mastery</span>
+<h2 class="font-headline-md text-headline-md text-on-surface mt-1 mb-6">From Copying to Independent Expressive Writing</h2>
+<div class="bg-primary-fixed/25 border border-primary-fixed rounded-[16px] p-6 mb-8 grid grid-cols-1 md:grid-cols-2 gap-4">
+<div>
+<p class="text-label-sm font-label-sm text-on-primary-fixed-variant uppercase tracking-wide mb-1">Goal</p>
+<p class="text-on-surface text-body-md">Spontaneous creation. Removing visual models so she generates her own original written thoughts, answers questions, or crafts stories independently.</p>
+</div>
+<div>
+<p class="text-label-sm font-label-sm text-on-primary-fixed-variant uppercase tracking-wide mb-1">Rule</p>
+<p class="text-on-surface text-body-md">Support her with digital word prediction tools or keyboard setups so fine motor friction never stalls her communication.</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter mb-8">
+<div class="bg-surface-container-lowest rounded-[16px] atmospheric-shadow p-6 flex flex-col">
+<div class="w-9 h-9 rounded-full bg-primary-container/15 text-primary flex items-center justify-center font-semibold mb-3">1</div>
+<h4 class="font-headline-md text-[17px] text-on-surface mb-2">Picture Prompt Writing with Word Prediction</h4>
+<p class="text-label-sm font-label-sm text-outline uppercase tracking-wide mb-1">Setup</p>
+<p class="text-on-surface-variant text-body-md text-[15px] mb-3">Show a photo of a recent family trip, park visit, or her favorite character doing something funny. Provide a tablet keyboard equipped with word prediction (or a physical word-bank menu).</p>
+<p class="text-label-sm font-label-sm text-outline uppercase tracking-wide mb-1">How to play</p>
+<ol class="list-decimal list-inside space-y-1 text-on-surface-variant text-body-md text-[15px]">
+<li class="pl-1">Ask: "What happened here?"</li>
+<li class="pl-1">She uses the keyboard to type her thought (e.g., WE WENT PARK or BLUEY IS JUMPING) without looking at a pre-made model card.</li>
+</ol>
+
+</div>
+<div class="bg-surface-container-lowest rounded-[16px] atmospheric-shadow p-6 flex flex-col">
+<div class="w-9 h-9 rounded-full bg-primary-container/15 text-primary flex items-center justify-center font-semibold mb-3">2</div>
+<h4 class="font-headline-md text-[17px] text-on-surface mb-2">"Ask Me Anything" Daily Digital Journaling</h4>
+<p class="text-label-sm font-label-sm text-outline uppercase tracking-wide mb-1">Setup</p>
+<p class="text-on-surface-variant text-body-md text-[15px] mb-3">Set up a simple digital journal template with one daily question prompt, e.g. "Today I want to play..." or "I felt happy when..."</p>
+<p class="text-label-sm font-label-sm text-outline uppercase tracking-wide mb-1">How to play</p>
+<ol class="list-decimal list-inside space-y-1 text-on-surface-variant text-body-md text-[15px]">
+<li class="pl-1">She completes the sentence by typing or selecting words from a word bank, gradually building a multi-page journal of her own thoughts over time.</li>
+</ol>
+
+</div>
+<div class="bg-surface-container-lowest rounded-[16px] atmospheric-shadow p-6 flex flex-col">
+<div class="w-9 h-9 rounded-full bg-primary-container/15 text-primary flex items-center justify-center font-semibold mb-3">3</div>
+<h4 class="font-headline-md text-[17px] text-on-surface mb-2">Interactive Story Co-Creation</h4>
+<p class="text-label-sm font-label-sm text-outline uppercase tracking-wide mb-1">Setup</p>
+<p class="text-on-surface-variant text-body-md text-[15px] mb-3">Open a digital slide deck or blank booklet.</p>
+<p class="text-label-sm font-label-sm text-outline uppercase tracking-wide mb-1">How to play</p>
+<ol class="list-decimal list-inside space-y-1 text-on-surface-variant text-body-md text-[15px]">
+<li class="pl-1">Let her choose a picture for the page.</li>
+<li class="pl-1">Then, ask her to write what the character says.</li>
+<li class="pl-1">She types out a full multi-word Gestalt script (e.g., READY SET GO!) directly into a speech bubble on the slide.</li>
+</ol>
+
+</div>
+</div>
+<div id="bridge-4-5-checklist" data-checklist class="bg-secondary-container/25 border border-secondary/30 rounded-[16px] p-6 scroll-mt-24">
+<div class="flex items-center justify-between gap-3 flex-wrap mb-1">
+<h4 class="font-headline-md text-[18px] text-secondary">Level 5 Qualification Checklist — Phase 2 Mastery</h4>
+<span data-progress-text class="text-label-sm font-label-sm text-secondary"></span>
+</div>
+<p class="text-on-surface-variant text-body-md text-[15px] mb-3">When she checks off every box here, she has officially mastered Phase 2 (Expressive Writing) as an independent, flexible communicator!</p>
+<div class="w-full h-2 bg-white/60 rounded-full overflow-hidden mb-4">
+<div data-progress-bar class="h-full bg-secondary transition-all duration-300" style="width:0%"></div>
+</div>
+<div class="space-y-1 mb-2">
+<label class="checklist-row flex items-start gap-3 p-3 rounded-lg transition-colors cursor-pointer">
+<input class="check-item mt-0.5" type="checkbox">
+<span class="checklist-label text-body-md text-[15px]"><span class="font-semibold text-on-surface">Spontaneous Word Generation</span><br><span class="text-on-surface-variant">Types or writes target words and phrases without needing a physical model card present to copy.</span></span>
+</label>
+<label class="checklist-row flex items-start gap-3 p-3 rounded-lg transition-colors cursor-pointer">
+<input class="check-item mt-0.5" type="checkbox">
+<span class="checklist-label text-body-md text-[15px]"><span class="font-semibold text-on-surface">Independent Thought Composition</span><br><span class="text-on-surface-variant">Combines carrier phrases and target words flexibly to answer questions or express spontaneous comments (e.g., [ WE GO PARK NOW ]).</span></span>
+</label>
+<label class="checklist-row flex items-start gap-3 p-3 rounded-lg transition-colors cursor-pointer">
+<input class="check-item mt-0.5" type="checkbox">
+<span class="checklist-label text-body-md text-[15px]"><span class="font-semibold text-on-surface">Flexible Tool Utilization</span><br><span class="text-on-surface-variant">Uses a physical keyboard, touchscreen AAC grid, or handwriting tool to express thoughts accurately across different daily contexts.</span></span>
+</label>
+</div>
+<div data-progress-badge class="hidden mt-3 inline-flex items-center gap-2 bg-secondary text-on-secondary px-4 py-2 rounded-full text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-[18px]">celebration</span>Phase 2 mastered — an independent expressive writer!
+</div>
+</div>
+</section>
+
+<section class="max-w-container-max-width mx-auto px-margin-desktop pb-section-gap">
+<div class="bg-secondary text-on-secondary rounded-[20px] p-10 flex flex-col md:flex-row items-center gap-6 justify-between atmospheric-shadow">
+<div>
+<h3 class="font-headline-md text-[22px] mb-2">Revisit Phase 1 anytime</h3>
+<p class="text-white/85 max-w-xl">Reading and writing grow together &mdash; it's normal to move back and forth between phases as new words and routines come up.</p>
+</div>
+<a class="shrink-0 flex items-center gap-2 font-semibold bg-white text-secondary px-6 py-3 rounded-full hover:gap-3 transition-all" href="phase1-reading.html" rel="noopener" target="_blank">Back to Phase 1 <span class="material-symbols-outlined">arrow_forward</span></a>
+</div>
+</section>
+</main>
+<footer class="bg-surface-container-low w-full py-section-gap mt-section-gap">
+<div class="flex flex-col items-center gap-4 px-margin-desktop max-w-container-max-width mx-auto text-center">
+<div class="font-display-lg text-xl text-primary">NeuroGrove</div>
+<p class="text-on-surface-variant max-w-md">Activities in this guide are adapted from a gestalt language processing (Natural Language Acquisition) teaching reference. They are general guidance, not a substitute for individualized support from a speech-language pathologist.</p>
+<p class="font-body-md text-body-md text-secondary">&copy; 2026 NeuroGrove. Designed for Cognitive Ease.</p>
+</div>
+</footer>
+
+<script>
+    function wireChecklist(root) {
+        var boxes = Array.prototype.slice.call(root.querySelectorAll('input[type="checkbox"]'));
+        var bar = root.querySelector('[data-progress-bar]');
+        var text = root.querySelector('[data-progress-text]');
+        var badge = root.querySelector('[data-progress-badge]');
+        function update() {
+            var total = boxes.length;
+            var checked = boxes.filter(function (b) { return b.checked; }).length;
+            var pct = total ? Math.round((checked / total) * 100) : 0;
+            if (bar) bar.style.width = pct + '%';
+            if (text) text.textContent = checked + ' of ' + total + ' complete';
+            if (badge) {
+                if (checked === total && total > 0) { badge.classList.remove('hidden'); }
+                else { badge.classList.add('hidden'); }
+            }
+        }
+        boxes.forEach(function (b) { b.addEventListener('change', update); });
+        update();
+    }
+    document.querySelectorAll('[data-checklist]').forEach(wireChecklist);
+</script>
+
+</body>
+</html>

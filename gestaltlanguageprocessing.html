@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Understanding Gestalt Language Processing | NeuroGrove</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=Inter:wght@100..900&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "error-container": "#ffdad6",
+                    "on-background": "#191c1d",
+                    "tertiary": "#605584",
+                    "on-tertiary-fixed": "#1f133f",
+                    "on-primary-container": "#fefcff",
+                    "surface-container-high": "#e7e8e9",
+                    "primary-container": "#5371c2",
+                    "on-tertiary": "#ffffff",
+                    "primary": "#3958a7",
+                    "background": "#f8f9fa",
+                    "tertiary-fixed": "#e8ddff",
+                    "on-secondary": "#ffffff",
+                    "surface-container-highest": "#e1e3e4",
+                    "on-secondary-fixed": "#002110",
+                    "on-primary-fixed": "#001849",
+                    "on-error-container": "#93000a",
+                    "secondary-fixed-dim": "#98d4ac",
+                    "surface-tint": "#3b5ba9",
+                    "on-primary": "#ffffff",
+                    "inverse-on-surface": "#f0f1f2",
+                    "on-secondary-fixed-variant": "#165132",
+                    "on-error": "#ffffff",
+                    "surface-variant": "#e1e3e4",
+                    "tertiary-fixed-dim": "#cdbff5",
+                    "secondary-fixed": "#b4f0c7",
+                    "outline": "#747682",
+                    "surface": "#f8f9fa",
+                    "primary-fixed": "#dae1ff",
+                    "on-surface": "#191c1d",
+                    "surface-bright": "#f8f9fa",
+                    "surface-container": "#edeeef",
+                    "on-surface-variant": "#444651",
+                    "outline-variant": "#c4c6d3",
+                    "on-primary-fixed-variant": "#204290",
+                    "on-tertiary-container": "#fffbff",
+                    "secondary-container": "#b1edc4",
+                    "surface-container-low": "#f3f4f5",
+                    "on-secondary-container": "#356e4c",
+                    "primary-fixed-dim": "#b3c5ff",
+                    "surface-dim": "#d9dadb",
+                    "secondary": "#316948",
+                    "inverse-surface": "#2e3132",
+                    "on-tertiary-fixed-variant": "#4b406d",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary-container": "#7a6d9e",
+                    "error": "#ba1a1a",
+                    "inverse-primary": "#b3c5ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-mobile": "16px",
+                    "margin-desktop": "40px",
+                    "section-gap": "80px",
+                    "container-max-width": "1200px",
+                    "gutter": "24px",
+                    "unit": "8px"
+            },
+            "fontFamily": {
+                    "display-lg": ["Montserrat"],
+                    "label-sm": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-md": ["Montserrat"],
+                    "display-lg-mobile": ["Montserrat"],
+                    "body-md": ["Inter"]
+            },
+            "fontSize": {
+                    "display-lg": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "label-sm": ["13px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0.02em", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                    "display-lg-mobile": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "letterSpacing": "0.01em", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .atmospheric-shadow {
+            box-shadow: 0 20px 40px rgba(57, 88, 167, 0.05);
+        }
+        html { scroll-behavior: smooth; }
+        input[type="checkbox"].check-item {
+            accent-color: #3958a7;
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+        }
+        .checklist-row:has(input:checked) {
+            background-color: rgba(177, 237, 196, 0.35);
+        }
+        .checklist-row:has(input:checked) .checklist-label {
+            text-decoration: line-through;
+            text-decoration-color: rgba(49, 105, 72, 0.55);
+        }
+</style>
+</head>
+
+<body class="bg-surface font-body-md text-on-surface">
+<div class="w-full bg-surface-container-low border-b border-outline-variant/40">
+<div class="max-w-container-max-width mx-auto px-margin-desktop py-4 flex items-center gap-2 text-label-sm font-label-sm text-on-surface-variant flex-wrap">
+<a class="hover:text-primary transition-colors" href="index.html">NeuroGrove</a><span class="material-symbols-outlined text-[16px] text-outline">chevron_right</span><span class="text-primary font-semibold">Activity for Gestalt Language Processing</span>
+</div>
+</div>
+<main>
+<section class="bg-surface-container-lowest py-section-gap">
+<div class="max-w-container-max-width mx-auto px-margin-desktop">
+<span class="text-label-sm font-label-sm text-primary uppercase tracking-widest">Curated Activities</span>
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-primary tracking-tight mt-2 mb-6 max-w-3xl">Understanding Gestalt Language Processing</h1>
+<p class="text-body-lg text-on-surface-variant max-w-3xl leading-relaxed">Gestalt Language Processors (GLPs) memorize scripts, songs, and entire phrases as single units before breaking them down into individual words. That means reading and writing need a different starting point &mdash; one that starts with whole, meaningful chunks of language tied to what she already loves, not isolated letters and sounds.</p>
+</div>
+</section>
+
+<section class="py-section-gap max-w-container-max-width mx-auto px-margin-desktop">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-6">When introducing reading and writing</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter mb-16">
+<div class="bg-surface-container-lowest p-6 rounded-[16px] atmospheric-shadow">
+<div class="w-12 h-12 bg-primary-container/10 text-primary rounded-2xl flex items-center justify-center mb-4">
+<span class="material-symbols-outlined">block</span>
+</div>
+<h3 class="font-headline-md text-[18px] text-primary mb-2">Skip isolated phonics&mdash;at first</h3>
+<p class="text-on-surface-variant text-body-md text-[15px]">Starting with "b-a-t" can confuse a Gestalt processor who perceives text as full visual units tied to emotional context.</p>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-[16px] atmospheric-shadow">
+<div class="w-12 h-12 bg-secondary-container/20 text-secondary rounded-2xl flex items-center justify-center mb-4">
+<span class="material-symbols-outlined">visibility</span>
+</div>
+<h3 class="font-headline-md text-[18px] text-secondary mb-2">Leverage whole-word sight mapping</h3>
+<p class="text-on-surface-variant text-body-md text-[15px]">Teach complete words associated directly with her favorite objects, activities, and routines.</p>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-[16px] atmospheric-shadow">
+<div class="w-12 h-12 bg-tertiary-fixed/40 text-tertiary rounded-2xl flex items-center justify-center mb-4">
+<span class="material-symbols-outlined">chat_bubble</span>
+</div>
+<h3 class="font-headline-md text-[18px] text-tertiary mb-2">Pair print with AAC / visuals</h3>
+<p class="text-on-surface-variant text-body-md text-[15px]">Text should always be linked to meaningful visual symbols, communication boards, or physical objects.</p>
+</div>
+</div>
+
+<h2 class="font-headline-md text-headline-md text-on-surface mb-6">Key rules for success</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter mb-16">
+<div class="p-6 rounded-[16px] border border-outline-variant/50">
+<h3 class="font-headline-md text-[17px] text-on-surface mb-2">Presume competence</h3>
+<p class="text-on-surface-variant text-body-md text-[15px]">Minimally verbal does not mean minimal intelligence. She may understand complex printed words well before she can speak or write them independently.</p>
+</div>
+<div class="p-6 rounded-[16px] border border-outline-variant/50">
+<h3 class="font-headline-md text-[17px] text-on-surface mb-2">Keep high motivation</h3>
+<p class="text-on-surface-variant text-body-md text-[15px]">Only use words that interest her. If she does not care about "apple," do not force it &mdash; use her specific comfort items or hyper-fixations instead.</p>
+</div>
+<div class="p-6 rounded-[16px] border border-outline-variant/50">
+<h3 class="font-headline-md text-[17px] text-on-surface mb-2">Use AAC in parallel</h3>
+<p class="text-on-surface-variant text-body-md text-[15px]">A dedicated AAC app on a tablet with text-to-speech serves as a primary tool for bridging reading and writing with spoken output.</p>
+</div>
+</div>
+
+<h2 class="font-headline-md text-headline-md text-on-surface mb-2">Choose a phase to explore</h2>
+<p class="text-on-surface-variant text-body-md mb-6">Each phase opens in a new tab with a 5-level framework, hands-on activities for every transition, and progress checklists you can check off together.</p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<a class="group bg-surface-container-lowest rounded-[20px] atmospheric-shadow p-8 flex flex-col hover:-translate-y-1 transition-transform" href="phase1-reading.html" rel="noopener" target="_blank">
+<div class="w-14 h-14 bg-primary-container/10 text-primary rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-3xl">auto_stories</span>
+</div>
+<span class="text-label-sm font-label-sm text-primary uppercase tracking-widest mb-1">Phase 1</span>
+<h3 class="font-headline-md text-[22px] text-on-surface mb-3">Building Reading (Receptive Literacy)</h3>
+<p class="text-on-surface-variant text-body-md mb-6">Help her understand that written text represents meaningful ideas &mdash; from print-unaware to reading full Gestalt visual strips, across 5 levels.</p>
+<span class="mt-auto inline-flex items-center gap-2 text-primary font-semibold group-hover:gap-3 transition-all">Explore Phase 1 activities <span class="material-symbols-outlined">arrow_forward</span></span>
+</a>
+<a class="group bg-surface-container-lowest rounded-[20px] atmospheric-shadow p-8 flex flex-col hover:-translate-y-1 transition-transform" href="phase2-writing.html" rel="noopener" target="_blank">
+<div class="w-14 h-14 bg-secondary-container/20 text-secondary rounded-2xl flex items-center justify-center mb-6 group-hover:bg-secondary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-3xl">edit_note</span>
+</div>
+<span class="text-label-sm font-label-sm text-secondary uppercase tracking-widest mb-1">Phase 2</span>
+<h3 class="font-headline-md text-[22px] text-on-surface mb-3">Building Writing (Expressive Literacy)</h3>
+<p class="text-on-surface-variant text-body-md mb-6">Writing doesn't need to start with a pencil. From sensory scribbling to independent expressive writing, across 5 levels.</p>
+<span class="mt-auto inline-flex items-center gap-2 text-secondary font-semibold group-hover:gap-3 transition-all">Explore Phase 2 activities <span class="material-symbols-outlined">arrow_forward</span></span>
+</a>
+</div>
+</section>
+</main>
+<footer class="bg-surface-container-low w-full py-section-gap mt-section-gap">
+<div class="flex flex-col items-center gap-4 px-margin-desktop max-w-container-max-width mx-auto text-center">
+<div class="font-display-lg text-xl text-primary">NeuroGrove</div>
+<p class="text-on-surface-variant max-w-md">Activities in this guide are adapted from a gestalt language processing (Natural Language Acquisition) teaching reference. They are general guidance, not a substitute for individualized support from a speech-language pathologist.</p>
+<p class="font-body-md text-body-md text-secondary">&copy; 2026 NeuroGrove. Designed for Cognitive Ease.</p>
+</div>
+</footer>
+</body>
+</html>

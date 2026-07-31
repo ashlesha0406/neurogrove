@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Phase 1: Building Reading | NeuroGrove</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=Inter:wght@100..900&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "error-container": "#ffdad6",
+                    "on-background": "#191c1d",
+                    "tertiary": "#605584",
+                    "on-tertiary-fixed": "#1f133f",
+                    "on-primary-container": "#fefcff",
+                    "surface-container-high": "#e7e8e9",
+                    "primary-container": "#5371c2",
+                    "on-tertiary": "#ffffff",
+                    "primary": "#3958a7",
+                    "background": "#f8f9fa",
+                    "tertiary-fixed": "#e8ddff",
+                    "on-secondary": "#ffffff",
+                    "surface-container-highest": "#e1e3e4",
+                    "on-secondary-fixed": "#002110",
+                    "on-primary-fixed": "#001849",
+                    "on-error-container": "#93000a",
+                    "secondary-fixed-dim": "#98d4ac",
+                    "surface-tint": "#3b5ba9",
+                    "on-primary": "#ffffff",
+                    "inverse-on-surface": "#f0f1f2",
+                    "on-secondary-fixed-variant": "#165132",
+                    "on-error": "#ffffff",
+                    "surface-variant": "#e1e3e4",
+                    "tertiary-fixed-dim": "#cdbff5",
+                    "secondary-fixed": "#b4f0c7",
+                    "outline": "#747682",
+                    "surface": "#f8f9fa",
+                    "primary-fixed": "#dae1ff",
+                    "on-surface": "#191c1d",
+                    "surface-bright": "#f8f9fa",
+                    "surface-container": "#edeeef",
+                    "on-surface-variant": "#444651",
+                    "outline-variant": "#c4c6d3",
+                    "on-primary-fixed-variant": "#204290",
+                    "on-tertiary-container": "#fffbff",
+                    "secondary-container": "#b1edc4",
+                    "surface-container-low": "#f3f4f5",
+                    "on-secondary-container": "#356e4c",
+                    "primary-fixed-dim": "#b3c5ff",
+                    "surface-dim": "#d9dadb",
+                    "secondary": "#316948",
+                    "inverse-surface": "#2e3132",
+                    "on-tertiary-fixed-variant": "#4b406d",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary-container": "#7a6d9e",
+                    "error": "#ba1a1a",
+                    "inverse-primary": "#b3c5ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-mobile": "16px",
+                    "margin-desktop": "40px",
+                    "section-gap": "80px",
+                    "container-max-width": "1200px",
+                    "gutter": "24px",
+                    "unit": "8px"
+            },
+            "fontFamily": {
+                    "display-lg": ["Montserrat"],
+                    "label-sm": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-md": ["Montserrat"],
+                    "display-lg-mobile": ["Montserrat"],
+                    "body-md": ["Inter"]
+            },
+            "fontSize": {
+                    "display-lg": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "label-sm": ["13px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0.02em", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                    "display-lg-mobile": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "letterSpacing": "0.01em", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .atmospheric-shadow {
+            box-shadow: 0 20px 40px rgba(57, 88, 167, 0.05);
+        }
+        html { scroll-behavior: smooth; }
+        input[type="checkbox"].check-item {
+            accent-color: #3958a7;
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+        }
+        .checklist-row:has(input:checked) {
+            background-color: rgba(177, 237, 196, 0.35);
+        }
+        .checklist-row:has(input:checked) .checklist-label {
+            text-decoration: line-through;
+            text-decoration-color: rgba(49, 105, 72, 0.55);
+        }
+</style>
+</head>
+
+<body class="bg-surface font-body-md text-on-surface">
+<div class="w-full bg-surface-container-low border-b border-outline-variant/40">
+<div class="max-w-container-max-width mx-auto px-margin-desktop py-4 flex items-center gap-2 text-label-sm font-label-sm text-on-surface-variant flex-wrap">
+<a class="hover:text-primary transition-colors" href="index.html">NeuroGrove</a><span class="material-symbols-outlined text-[16px] text-outline">chevron_right</span><a class="hover:text-primary transition-colors" href="gestalt-language-processing.html">Gestalt Language Processing</a><span class="material-symbols-outlined text-[16px] text-outline">chevron_right</span><span class="text-primary font-semibold">Phase 1: Reading</span>
+</div>
+</div>
+<div class="sticky top-0 z-40 bg-surface/95 backdrop-blur-sm border-b border-outline-variant/40">
+<div class="max-w-container-max-width mx-auto px-margin-desktop py-3 flex gap-3 overflow-x-auto">
+<a class="shrink-0 px-4 py-2 rounded-full bg-surface-container-lowest text-on-surface-variant hover:bg-primary hover:text-white transition-colors text-label-sm font-label-sm border border-outline-variant/50" href="#overview">Overview</a>
+<a class="shrink-0 px-4 py-2 rounded-full bg-surface-container-lowest text-on-surface-variant hover:bg-primary hover:text-white transition-colors text-label-sm font-label-sm border border-outline-variant/50" href="#assessment">Find her level</a>
+<a class="shrink-0 px-4 py-2 rounded-full bg-surface-container-lowest text-on-surface-variant hover:bg-primary hover:text-white transition-colors text-label-sm font-label-sm border border-outline-variant/50" href="#bridge-1-2">Level 1→2</a>
+<a class="shrink-0 px-4 py-2 rounded-full bg-surface-container-lowest text-on-surface-variant hover:bg-primary hover:text-white transition-colors text-label-sm font-label-sm border border-outline-variant/50" href="#bridge-2-3">Level 2→3</a>
+<a class="shrink-0 px-4 py-2 rounded-full bg-surface-container-lowest text-on-surface-variant hover:bg-primary hover:text-white transition-colors text-label-sm font-label-sm border border-outline-variant/50" href="#bridge-3-4">Level 3→4</a>
+<a class="shrink-0 px-4 py-2 rounded-full bg-surface-container-lowest text-on-surface-variant hover:bg-primary hover:text-white transition-colors text-label-sm font-label-sm border border-outline-variant/50" href="#bridge-4-5">Level 4→5 · Mastery</a>
+</div>
+</div>
+<main>
+<section id="overview" class="bg-surface-container-lowest py-section-gap scroll-mt-16">
+<div class="max-w-container-max-width mx-auto px-margin-desktop">
+<span class="text-label-sm font-label-sm text-primary uppercase tracking-widest">Phase 1</span>
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-primary tracking-tight mt-2 mb-6 max-w-3xl">Building Reading (Receptive Literacy)</h1>
+<p class="text-body-lg text-on-surface-variant max-w-3xl leading-relaxed mb-2">Focus on helping her understand that written text represents meaningful ideas, starting entirely within her realm of interest.</p>
+<p class="text-body-md text-on-surface-variant max-w-3xl leading-relaxed">Because Gestalt Language Processors (GLPs) process written print as whole visual chunks rather than individual letters, this 5-level framework evaluates how effectively she recognizes, connects, and extracts meaning from visual words &mdash; and gives you activities to help her move from one level to the next.</p>
+</div>
+</section>
+
+<section class="py-section-gap max-w-container-max-width mx-auto px-margin-desktop">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-2">Phase 1 Evaluation Framework: 5 Skill Levels</h2>
+<p class="text-on-surface-variant text-body-md mb-8">A quick map of the whole journey, from not noticing print at all to reading full Gestalt sentence strips.</p>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-gutter">
+<div class="bg-surface-container-lowest p-6 rounded-[16px] atmospheric-shadow">
+<div class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-headline-md text-[16px] font-semibold mb-4">1</div>
+<h3 class="font-headline-md text-[18px] text-primary mb-2">Print Unaware</h3>
+<p class="text-on-surface-variant text-body-md text-[15px]">Treats printed text as background noise or decoration; does not look at words when pointed out or show interest in book print / labels.</p>
+</div><div class="bg-surface-container-lowest p-6 rounded-[16px] atmospheric-shadow">
+<div class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-headline-md text-[16px] font-semibold mb-4">2</div>
+<h3 class="font-headline-md text-[18px] text-primary mb-2">Emergent Print Connection</h3>
+<p class="text-on-surface-variant text-body-md text-[15px]">Notices printed labels or familiar logos (e.g., Disney, YouTube, snack brand logos); occasionally tracks a finger pointing to text when accompanied by an enthusiastic voice.</p>
+</div><div class="bg-surface-container-lowest p-6 rounded-[16px] atmospheric-shadow">
+<div class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-headline-md text-[16px] font-semibold mb-4">3</div>
+<h3 class="font-headline-md text-[18px] text-primary mb-2">High-Motivation Target Recognizer</h3>
+<p class="text-on-surface-variant text-body-md text-[15px]">Consistently recognizes 3–5 high-value printed words (e.g., Juice, Trampoline, Bluey) when paired with pictures or real items. Demonstrates basic left-to-right visual tracking.</p>
+</div><div class="bg-surface-container-lowest p-6 rounded-[16px] atmospheric-shadow">
+<div class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-headline-md text-[16px] font-semibold mb-4">4</div>
+<h3 class="font-headline-md text-[18px] text-primary mb-2">Generalizing Receptive Reader</h3>
+<p class="text-on-surface-variant text-body-md text-[15px]">Receptively identifies 8–15+ target words across different contexts (cards, screens, book pages) without requiring the physical object present; matches printed word cards to pictures/objects accurately.</p>
+</div><div class="bg-surface-container-lowest p-6 rounded-[16px] atmospheric-shadow">
+<div class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-headline-md text-[16px] font-semibold mb-4">5</div>
+<h3 class="font-headline-md text-[18px] text-primary mb-2">Receptive Master (Phase 1 Expert)</h3>
+<p class="text-on-surface-variant text-body-md text-[15px]">Understands multi-word Gestalt visual strips (e.g., [ I want ] + [ Water ]); receptively selects or points to correct words in a sequence to fulfill a desire; reads whole phrases without needing picture support.</p>
+</div>
+</div>
+</section>
+
+<section id="assessment" class="bg-surface-container-low py-section-gap scroll-mt-16">
+<div class="max-w-container-max-width mx-auto px-margin-desktop">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-2">Find Her Starting Point</h2>
+<p class="text-on-surface-variant text-body-md mb-8 max-w-3xl">Check off the behaviors below that she displays consistently (at least 80% of the time). The highest level where you check all or most boxes is her baseline &mdash; that's where to start.</p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter"><div id="p1-level-1" data-checklist class="bg-surface-container-lowest rounded-[16px] atmospheric-shadow p-6 scroll-mt-24">
+<div class="flex items-center justify-between mb-3 gap-3 flex-wrap">
+<h3 class="font-headline-md text-[18px] text-primary">Level 1: Print Unaware</h3>
+<span data-progress-text class="text-label-sm font-label-sm text-on-surface-variant"></span>
+</div>
+<div class="w-full h-2 bg-surface-variant rounded-full overflow-hidden mb-4">
+<div data-progress-bar class="h-full bg-secondary transition-all duration-300" style="width:0%"></div>
+</div>
+<div class="space-y-1">
+<label class="checklist-row flex items-start gap-3 p-3 rounded-lg transition-colors cursor-pointer">
+<input class="check-item mt-0.5" type="checkbox">
+<span class="checklist-label text-on-surface-variant text-body-md text-[15px]">Ignores text on signs, books, or screens.</span>
+</label>
+<label class="checklist-row flex items-start gap-3 p-3 rounded-lg transition-colors cursor-pointer">
+<input class="check-item mt-0.5" type="checkbox">
+<span class="checklist-label text-on-surface-variant text-body-md text-[15px]">Does not look when you point to a word on a page.</span>
+</label>
+<label class="checklist-row flex items-start gap-3 p-3 rounded-lg transition-colors cursor-pointer">
+<input class="check-item mt-0.5" type="checkbox">
+<span class="checklist-label text-on-surface-variant text-body-md text-[15px]">Treats written words like decorative background noise.</span>
+</label>
+</div>
+</div><div id="p1-level-2" data-checklist class="bg-surface-container-lowest rounded-[16px] atmospheric-shadow p-6 scroll-mt-24">
+<div class="flex items-center justify-between mb-3 gap-3 flex-wrap">
+<h3 class="font-headline-md text-[18px] text-primary">Level 2: Emergent Print Connection</h3>
+<span data-progress-text class="text-label-sm font-label-sm text-on-surface-variant"></span>
+</div>
+<div class="w-full h-2 bg-surface-variant rounded-full overflow-hidden mb-4">
+<div data-progress-bar class="h-full bg-secondary transition-all duration-300" style="width:0%"></div>
+</div>
+<div class="space-y-1">
+<label class="checklist-row flex items-start gap-3 p-3 rounded-lg transition-colors cursor-pointer">
+<input class="check-item mt-0.5" type="checkbox">
+<span class="checklist-label text-on-surface-variant text-body-md text-[15px]">Recognizes specific brand logos (e.g., YouTube logo, Netflix, Disney, a favorite snack box).</span>
+</label>
+<label class="checklist-row flex items-start gap-3 p-3 rounded-lg transition-colors cursor-pointer">
+<input class="check-item mt-0.5" type="checkbox">
+<span class="checklist-label text-on-surface-variant text-body-md text-[15px]">Looks at text when you point to it using high intonation ("Look! Water!").</span>
+</label>
+<label class="checklist-row flex items-start gap-3 p-3 rounded-lg transition-colors cursor-pointer">
+<input class="check-item mt-0.5" type="checkbox">
+<span class="checklist-label text-on-surface-variant text-body-md text-[15px]">Shows curiosity toward familiar environmental print (e.g., stopping at a STOP sign).</span>
+</label>
+</div>
+</div><div id="p1-level-3" data-checklist class="bg-surface-container-lowest rounded-[16px] atmospheric-shadow p-6 scroll-mt-24">
+<div class="flex items-center justify-between mb-3 gap-3 flex-wrap">
+<h3 class="font-headline-md text-[18px] text-primary">Level 3: High-Motivation Target Recognizer</h3>
+<span data-progress-text class="text-label-sm font-label-sm text-on-surface-variant"></span>
+</div>
+<div class="w-full h-2 bg-surface-variant rounded-full overflow-hidden mb-4">
+<div data-progress-bar class="h-full bg-secondary transition-all duration-300" style="width:0%"></div>
+</div>
+<div class="space-y-1">
+<label class="checklist-row flex items-start gap-3 p-3 rounded-lg transition-colors cursor-pointer">
+<input class="check-item mt-0.5" type="checkbox">
+<span class="checklist-label text-on-surface-variant text-body-md text-[15px]">Consistently points to or picks up 3 to 5 printed word cards for her top favorite items (e.g., "Juice", "Bluey", "Swing").</span>
+</label>
+<label class="checklist-row flex items-start gap-3 p-3 rounded-lg transition-colors cursor-pointer">
+<input class="check-item mt-0.5" type="checkbox">
+<span class="checklist-label text-on-surface-variant text-body-md text-[15px]">Tracks your finger visually from left to right across a printed word when you read it.</span>
+</label>
+<label class="checklist-row flex items-start gap-3 p-3 rounded-lg transition-colors cursor-pointer">
+<input class="check-item mt-0.5" type="checkbox">
+<span class="checklist-label text-on-surface-variant text-body-md text-[15px]">Matches a printed word card to a physical object or picture when given 2 choices.</span>
+</label>
+</div>
+</div><div id="p1-level-4" data-checklist class="bg-surface-container-lowest rounded-[16px] atmospheric-shadow p-6 scroll-mt-24">
+<div class="flex items-center justify-between mb-3 gap-3 flex-wrap">
+<h3 class="font-headline-md text-[18px] text-primary">Level 4: Generalizing Receptive Reader</h3>
+<span data-progress-text class="text-label-sm font-label-sm text-on-surface-variant"></span>
+</div>
+<div class="w-full h-2 bg-surface-variant rounded-full overflow-hidden mb-4">
+<div data-progress-bar class="h-full bg-secondary transition-all duration-300" style="width:0%"></div>
+</div>
+<div class="space-y-1">
+<label class="checklist-row flex items-start gap-3 p-3 rounded-lg transition-colors cursor-pointer">
+<input class="check-item mt-0.5" type="checkbox">
+<span class="checklist-label text-on-surface-variant text-body-md text-[15px]">Receptively identifies 8 to 15+ target words without needing the real object in front of her.</span>
+</label>
+<label class="checklist-row flex items-start gap-3 p-3 rounded-lg transition-colors cursor-pointer">
+<input class="check-item mt-0.5" type="checkbox">
+<span class="checklist-label text-on-surface-variant text-body-md text-[15px]">Accurately selects a target word card when presented with 3 to 4 word options.</span>
+</label>
+<label class="checklist-row flex items-start gap-3 p-3 rounded-lg transition-colors cursor-pointer">
+<input class="check-item mt-0.5" type="checkbox">
+<span class="checklist-label text-on-surface-variant text-body-md text-[15px]">Recognizes target words across different contexts (e.g., on a card, on a tablet screen, on a wall label).</span>
+</label>
+</div>
+</div><div id="p1-level-5" data-checklist class="bg-surface-container-lowest rounded-[16px] atmospheric-shadow p-6 scroll-mt-24">
+<div class="flex items-center justify-between mb-3 gap-3 flex-wrap">
+<h3 class="font-headline-md text-[18px] text-primary">Level 5: Receptive Master (Phase 1 Expert)</h3>
+<span data-progress-text class="text-label-sm font-label-sm text-on-surface-variant"></span>
+</div>
+<div class="w-full h-2 bg-surface-variant rounded-full overflow-hidden mb-4">
+<div data-progress-bar class="h-full bg-secondary transition-all duration-300" style="width:0%"></div>
+</div>
+<div class="space-y-1">
+<label class="checklist-row flex items-start gap-3 p-3 rounded-lg transition-colors cursor-pointer">
+<input class="check-item mt-0.5" type="checkbox">
+<span class="checklist-label text-on-surface-variant text-body-md text-[15px]">Reads and understands multi-word Gestalt visual strips (e.g., [ I want ] + [ Water ]).</span>
+</label>
+<label class="checklist-row flex items-start gap-3 p-3 rounded-lg transition-colors cursor-pointer">
+<input class="check-item mt-0.5" type="checkbox">
+<span class="checklist-label text-on-surface-variant text-body-md text-[15px]">Selects the correct word from a strip to express a choice without needing picture prompts.</span>
+</label>
+<label class="checklist-row flex items-start gap-3 p-3 rounded-lg transition-colors cursor-pointer">
+<input class="check-item mt-0.5" type="checkbox">
+<span class="checklist-label text-on-surface-variant text-body-md text-[15px]">Tracks and comprehends short, printed sentences built from her gestalts.</span>
+</label>
+</div>
+</div></div>
+</div>
+</section>
+
+<section id="bridge-1-2" class="py-section-gap max-w-container-max-width mx-auto px-margin-desktop scroll-mt-16">
+<span class="text-label-sm font-label-sm text-primary uppercase tracking-widest">Bridging Level 1 → Level 2</span>
+<h2 class="font-headline-md text-headline-md text-on-surface mt-1 mb-6">Core Focus: First Contact With Print</h2>
+<div class="bg-primary-fixed/25 border border-primary-fixed rounded-[16px] p-6 mb-8 grid grid-cols-1 md:grid-cols-2 gap-4">
+<div>
+<p class="text-label-sm font-label-sm text-on-primary-fixed-variant uppercase tracking-wide mb-1">Goal</p>
+<p class="text-on-surface text-body-md">Get her eyes to land on a printed shape for even 1 to 2 seconds and realize "that shape gets me what I want."</p>
+</div>
+<div>
+<p class="text-label-sm font-label-sm text-on-primary-fixed-variant uppercase tracking-wide mb-1">Rule</p>
+<p class="text-on-surface text-body-md">No multi-word cards, no fast video subtitles, and no pressure to speak or match.</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter mb-8">
+<div class="bg-surface-container-lowest rounded-[16px] atmospheric-shadow p-6 flex flex-col">
+<div class="w-9 h-9 rounded-full bg-primary-container/15 text-primary flex items-center justify-center font-semibold mb-3">1</div>
+<h4 class="font-headline-md text-[17px] text-on-surface mb-2">The "Cover-Up" Barrier (Physical Interaction)</h4>
+<p class="text-label-sm font-label-sm text-outline uppercase tracking-wide mb-1">Setup</p>
+<p class="text-on-surface-variant text-body-md text-[15px] mb-3">Take 3–4 post-it notes or index cards. On each card, write ONE single, giant, bold word in thick black marker for an item she loves (e.g., JUICE, IPAD, SWING).</p>
+<p class="text-label-sm font-label-sm text-outline uppercase tracking-wide mb-1">How to play</p>
+<ol class="list-decimal list-inside space-y-1 text-on-surface-variant text-body-md text-[15px]">
+<li class="pl-1">Cover her iPad screen or snack bowl directly with the IPAD or JUICE post-it note.</li>
+<li class="pl-1">She will naturally reach to peel or push the post-it off to get her item.</li>
+<li class="pl-1">Right as her hand touches the post-it, tap the text, say the word in a clear, happy, single tone ("Juice!"), and let her remove it.</li>
+</ol>
+<div class="mt-4 pt-4 border-t border-outline-variant/40">
+<p class="text-label-sm font-label-sm text-secondary uppercase tracking-wide mb-1">Why this works</p>
+<p class="text-on-surface-variant text-body-md text-[15px]">She physically has to look at and touch the printed word to access what she wants. Print becomes a physical key, not just something passive on a wall.</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-[16px] atmospheric-shadow p-6 flex flex-col">
+<div class="w-9 h-9 rounded-full bg-primary-container/15 text-primary flex items-center justify-center font-semibold mb-3">2</div>
+<h4 class="font-headline-md text-[17px] text-on-surface mb-2">The High-Contrast "Peek-a-Boo" Reveal</h4>
+<p class="text-label-sm font-label-sm text-outline uppercase tracking-wide mb-1">Setup</p>
+<p class="text-on-surface-variant text-body-md text-[15px] mb-3">Write a favorite target word (BLUEY, BUBBLES) in giant black letters on a plain white card. Hide the actual item behind a small blanket or box.</p>
+<p class="text-label-sm font-label-sm text-outline uppercase tracking-wide mb-1">How to play</p>
+<ol class="list-decimal list-inside space-y-1 text-on-surface-variant text-body-md text-[15px]">
+<li class="pl-1">Hold the white text card directly over the hidden item.</li>
+<li class="pl-1">Shake the card gently to catch her visual attention.</li>
+<li class="pl-1">As soon as her eyes glance at the card, say the word in a fun, exaggerated voice ("BUBBLES!"), immediately pull away the blanket, and blow the bubbles.</li>
+</ol>
+<div class="mt-4 pt-4 border-t border-outline-variant/40">
+<p class="text-label-sm font-label-sm text-secondary uppercase tracking-wide mb-1">Why this works</p>
+<p class="text-on-surface-variant text-body-md text-[15px]">The movement of the card and the immediate physical "payoff" (bubbles appearing) teaches her brain that the white card with black marks predicts fun.</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-[16px] atmospheric-shadow p-6 flex flex-col">
+<div class="w-9 h-9 rounded-full bg-primary-container/15 text-primary flex items-center justify-center font-semibold mb-3">3</div>
+<h4 class="font-headline-md text-[17px] text-on-surface mb-2">Tactile & Sensory Word Tracing</h4>
+<p class="text-label-sm font-label-sm text-outline uppercase tracking-wide mb-1">Setup</p>
+<p class="text-on-surface-variant text-body-md text-[15px] mb-3">Write her top favorite word (PARK or her name) on a tray using a sensory medium she enjoys — like finger-paint, whipped cream, kinetic sand, or a squishy gel bag.</p>
+<p class="text-label-sm font-label-sm text-outline uppercase tracking-wide mb-1">How to play</p>
+<ol class="list-decimal list-inside space-y-1 text-on-surface-variant text-body-md text-[15px]">
+<li class="pl-1">Do not ask her to write or trace.</li>
+<li class="pl-1">Put her favorite toy right next to the tray.</li>
+<li class="pl-1">Take your own finger and trace through the letters smoothly, making a fun sound effect (like a car revving or a slide sound: "Wooooosh... PARK!").</li>
+<li class="pl-1">Let her smash, touch, or run her fingers through the textured word.</li>
+</ol>
+<div class="mt-4 pt-4 border-t border-outline-variant/40">
+<p class="text-label-sm font-label-sm text-secondary uppercase tracking-wide mb-1">Why this works</p>
+<p class="text-on-surface-variant text-body-md text-[15px]">It removes the abstract "paper" element and lets her experience letter shapes through tactile touch and play.</p>
+</div>
+</div>
+</div>
+<div id="bridge-1-2-checklist" data-checklist class="bg-secondary-container/25 border border-secondary/30 rounded-[16px] p-6 scroll-mt-24">
+<div class="flex items-center justify-between gap-3 flex-wrap mb-1">
+<h4 class="font-headline-md text-[18px] text-secondary">Level 2 Qualification Checklist</h4>
+<span data-progress-text class="text-label-sm font-label-sm text-secondary"></span>
+</div>
+<p class="text-on-surface-variant text-body-md text-[15px] mb-3">She has successfully reached Level 2 when she can pass these 3 simple physical checks:</p>
+<div class="w-full h-2 bg-white/60 rounded-full overflow-hidden mb-4">
+<div data-progress-bar class="h-full bg-secondary transition-all duration-300" style="width:0%"></div>
+</div>
+<div class="space-y-1 mb-2">
+<label class="checklist-row flex items-start gap-3 p-3 rounded-lg transition-colors cursor-pointer">
+<input class="check-item mt-0.5" type="checkbox">
+<span class="checklist-label text-body-md text-[15px]"><span class="font-semibold text-on-surface">Physical Interaction</span><br><span class="text-on-surface-variant">She reaches for, peels off, or pushes aside a post-it note with text on it to get to her favorite item.</span></span>
+</label>
+<label class="checklist-row flex items-start gap-3 p-3 rounded-lg transition-colors cursor-pointer">
+<input class="check-item mt-0.5" type="checkbox">
+<span class="checklist-label text-body-md text-[15px]"><span class="font-semibold text-on-surface">Direct Visual Glance</span><br><span class="text-on-surface-variant">When you present a high-contrast text card directly in front of her preferred item, her eyes glance at the text for 1–2 seconds before reaching for the item.</span></span>
+</label>
+<label class="checklist-row flex items-start gap-3 p-3 rounded-lg transition-colors cursor-pointer">
+<input class="check-item mt-0.5" type="checkbox">
+<span class="checklist-label text-body-md text-[15px]"><span class="font-semibold text-on-surface">Sensory/Movement Awareness</span><br><span class="text-on-surface-variant">She tracks your hand with her eyes when you trace a word in sensory media (sand, paint, cream) or shake a text card.</span></span>
+</label>
+</div>
+<div data-progress-badge class="hidden mt-3 inline-flex items-center gap-2 bg-secondary text-on-secondary px-4 py-2 rounded-full text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-[18px]">celebration</span>Level 2 reached — ready to build target vocabulary!
+</div>
+</div>
+</section>
+<section id="bridge-2-3" class="py-section-gap max-w-container-max-width mx-auto px-margin-desktop scroll-mt-16">
+<span class="text-label-sm font-label-sm text-primary uppercase tracking-widest">Bridging Level 2 → Level 3</span>
+<h2 class="font-headline-md text-headline-md text-on-surface mt-1 mb-6">Core Focus: Choosing Between Words</h2>
+<div class="bg-primary-fixed/25 border border-primary-fixed rounded-[16px] p-6 mb-8 grid grid-cols-1 md:grid-cols-2 gap-4">
+<div>
+<p class="text-label-sm font-label-sm text-on-primary-fixed-variant uppercase tracking-wide mb-1">Goal</p>
+<p class="text-on-surface text-body-md">Transition from reacting to single isolated text cards to choosing the correct printed word when given options.</p>
+</div>
+<div>
+<p class="text-label-sm font-label-sm text-on-primary-fixed-variant uppercase tracking-wide mb-1">Rule</p>
+<p class="text-on-surface text-body-md">Focus strictly on 3 to 5 of her highest-motivation items. Never use random or uninspiring words (like dog, cat, or hat).</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter mb-8">
+<div class="bg-surface-container-lowest rounded-[16px] atmospheric-shadow p-6 flex flex-col">
+<div class="w-9 h-9 rounded-full bg-primary-container/15 text-primary flex items-center justify-center font-semibold mb-3">1</div>
+<h4 class="font-headline-md text-[17px] text-on-surface mb-2">The "Visual Choice" Swap (2-Card Choice)</h4>
+<p class="text-label-sm font-label-sm text-outline uppercase tracking-wide mb-1">Setup</p>
+<p class="text-on-surface-variant text-body-md text-[15px] mb-3">Create two distinct word cards with bold black text: one for a high-value item (JUICE) and one for a neutral/unpreferred item (SHOE).</p>
+<p class="text-label-sm font-label-sm text-outline uppercase tracking-wide mb-1">How to play</p>
+<ol class="list-decimal list-inside space-y-1 text-on-surface-variant text-body-md text-[15px]">
+<li class="pl-1">Hold both items out of reach, but place the two word cards directly in front of her.</li>
+<li class="pl-1">Say in a warm, inviting tone: "What do you want?" (Do not read the cards for her yet).</li>
+<li class="pl-1">Point to the JUICE card, sweep your finger left-to-right under it, and read it using high melodic pitch: "Juuuice!" Then point to SHOE in a flat tone: "Shoe."</li>
+<li class="pl-1">Prompt her to touch or hand you one card. If she picks JUICE, hand her the juice immediately. If she picks SHOE, hand her the shoe calmly.</li>
+</ol>
+<div class="mt-4 pt-4 border-t border-outline-variant/40">
+<p class="text-label-sm font-label-sm text-secondary uppercase tracking-wide mb-1">Why this works</p>
+<p class="text-on-surface-variant text-body-md text-[15px]">She quickly connects the specific visual shape of the word JUICE with her favorite outcome.</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-[16px] atmospheric-shadow p-6 flex flex-col">
+<div class="w-9 h-9 rounded-full bg-primary-container/15 text-primary flex items-center justify-center font-semibold mb-3">2</div>
+<h4 class="font-headline-md text-[17px] text-on-surface mb-2">"Word-to-Object" Matching Puzzles</h4>
+<p class="text-label-sm font-label-sm text-outline uppercase tracking-wide mb-1">Setup</p>
+<p class="text-on-surface-variant text-body-md text-[15px] mb-3">Take 3 clear plastic bins or placemats. Tape her top 3 target word cards (IPAD, BUBBLES, SNACK) onto the front of each bin/mat in giant, clear lettering.</p>
+<p class="text-label-sm font-label-sm text-outline uppercase tracking-wide mb-1">How to play</p>
+<ol class="list-decimal list-inside space-y-1 text-on-surface-variant text-body-md text-[15px]">
+<li class="pl-1">Hand her the physical object (e.g., the jar of bubbles).</li>
+<li class="pl-1">Tap the BUBBLES word on the bin, sweep your finger under it, and say "Bubbles!"</li>
+<li class="pl-1">Guide her hand to place the bubbles into the bin labeled BUBBLES.</li>
+<li class="pl-1">Repeat daily during play or snack time until she drops the items into the correctly labeled bins independently.</li>
+</ol>
+<div class="mt-4 pt-4 border-t border-outline-variant/40">
+<p class="text-label-sm font-label-sm text-secondary uppercase tracking-wide mb-1">Why this works</p>
+<p class="text-on-surface-variant text-body-md text-[15px]">It anchors the 3D physical object directly to its 2D written representation through a concrete sorting motion.</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-[16px] atmospheric-shadow p-6 flex flex-col">
+<div class="w-9 h-9 rounded-full bg-primary-container/15 text-primary flex items-center justify-center font-semibold mb-3">3</div>
+<h4 class="font-headline-md text-[17px] text-on-surface mb-2">The Left-to-Right "Sing-Song Sweep"</h4>
+<p class="text-label-sm font-label-sm text-outline uppercase tracking-wide mb-1">Setup</p>
+<p class="text-on-surface-variant text-body-md text-[15px] mb-3">Use her top 3 target word cards (SWING, MUSIC, WATER).</p>
+<p class="text-label-sm font-label-sm text-outline uppercase tracking-wide mb-1">How to play</p>
+<ol class="list-decimal list-inside space-y-1 text-on-surface-variant text-body-md text-[15px]">
+<li class="pl-1">Before giving her the requested item, hold the card at her eye level.</li>
+<li class="pl-1">Use a bright, contrasting pointer (like a light-up wand, a favorite toy figure, or a brightly colored finger puppet).</li>
+<li class="pl-1">Place the pointer at the first letter, then sweep smoothly across to the last letter while singing/stretching out the word’s gestalt rhythm (e.g., "Swiiiing!" or "Mu-sic!").</li>
+<li class="pl-1">Hand her the pointer and let her "swipe" across the card herself before giving her the item.</li>
+</ol>
+<div class="mt-4 pt-4 border-t border-outline-variant/40">
+<p class="text-label-sm font-label-sm text-secondary uppercase tracking-wide mb-1">Why this works</p>
+<p class="text-on-surface-variant text-body-md text-[15px]">The sensory pointer and melodic sweeping train her eyes to track across the whole visual gestalt from left to right.</p>
+</div>
+</div>
+</div>
+<div id="bridge-2-3-checklist" data-checklist class="bg-secondary-container/25 border border-secondary/30 rounded-[16px] p-6 scroll-mt-24">
+<div class="flex items-center justify-between gap-3 flex-wrap mb-1">
+<h4 class="font-headline-md text-[18px] text-secondary">Level 3 Qualification Checklist</h4>
+<span data-progress-text class="text-label-sm font-label-sm text-secondary"></span>
+</div>
+<p class="text-on-surface-variant text-body-md text-[15px] mb-3">She has successfully reached Level 3 when she can consistently pass these 4 checkpoints:</p>
+<div class="w-full h-2 bg-white/60 rounded-full overflow-hidden mb-4">
+<div data-progress-bar class="h-full bg-secondary transition-all duration-300" style="width:0%"></div>
+</div>
+<div class="space-y-1 mb-2">
+<label class="checklist-row flex items-start gap-3 p-3 rounded-lg transition-colors cursor-pointer">
+<input class="check-item mt-0.5" type="checkbox">
+<span class="checklist-label text-body-md text-[15px]"><span class="font-semibold text-on-surface">Independent 2-Word Choice</span><br><span class="text-on-surface-variant">Given a choice between 2 printed word cards (e.g., JUICE vs SHOE), she reliably selects the card for the item she actually wants without pointing prompts.</span></span>
+</label>
+<label class="checklist-row flex items-start gap-3 p-3 rounded-lg transition-colors cursor-pointer">
+<input class="check-item mt-0.5" type="checkbox">
+<span class="checklist-label text-body-md text-[15px]"><span class="font-semibold text-on-surface">Reliable Core Sight Vocabulary</span><br><span class="text-on-surface-variant">She recognizes 3 to 5 distinct target printed words for her top favorite items/activities across different times of day.</span></span>
+</label>
+<label class="checklist-row flex items-start gap-3 p-3 rounded-lg transition-colors cursor-pointer">
+<input class="check-item mt-0.5" type="checkbox">
+<span class="checklist-label text-body-md text-[15px]"><span class="font-semibold text-on-surface">Left-to-Right Eye Tracking</span><br><span class="text-on-surface-variant">When a word card is presented, her eyes track across the text from left to right as you or she sweeps a finger underneath it.</span></span>
+</label>
+<label class="checklist-row flex items-start gap-3 p-3 rounded-lg transition-colors cursor-pointer">
+<input class="check-item mt-0.5" type="checkbox">
+<span class="checklist-label text-body-md text-[15px]"><span class="font-semibold text-on-surface">Functional Word-to-Item Matching</span><br><span class="text-on-surface-variant">She can match a physical object or picture to its corresponding printed word card when given 2–3 labeled options.</span></span>
+</label>
+</div>
+<div data-progress-badge class="hidden mt-3 inline-flex items-center gap-2 bg-secondary text-on-secondary px-4 py-2 rounded-full text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-[18px]">celebration</span>Level 3 reached — time to fade the pictures!
+</div>
+</div>
+</section>
+<section id="bridge-3-4" class="py-section-gap max-w-container-max-width mx-auto px-margin-desktop scroll-mt-16">
+<span class="text-label-sm font-label-sm text-primary uppercase tracking-widest">Bridging Level 3 → Level 4</span>
+<h2 class="font-headline-md text-headline-md text-on-surface mt-1 mb-6">Core Focus: Reading Pure Text</h2>
+<div class="bg-primary-fixed/25 border border-primary-fixed rounded-[16px] p-6 mb-8 grid grid-cols-1 md:grid-cols-2 gap-4">
+<div>
+<p class="text-label-sm font-label-sm text-on-primary-fixed-variant uppercase tracking-wide mb-1">Goal</p>
+<p class="text-on-surface text-body-md">Receptively identify 10–15+ target words from pure text alone (no picture prompts or physical items present during the choice) and recognize those words across different fonts/settings.</p>
+</div>
+<div>
+<p class="text-label-sm font-label-sm text-on-primary-fixed-variant uppercase tracking-wide mb-1">Rule</p>
+<p class="text-on-surface text-body-md">Expand beyond immediate snacks/toys to include action words, locations, and high-frequency routines (GO, OPEN, PARK, CAR, ALL DONE).</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter mb-8">
+<div class="bg-surface-container-lowest rounded-[16px] atmospheric-shadow p-6 flex flex-col">
+<div class="w-9 h-9 rounded-full bg-primary-container/15 text-primary flex items-center justify-center font-semibold mb-3">1</div>
+<h4 class="font-headline-md text-[17px] text-on-surface mb-2">The "Pure Text" Treasure Hunt (Fading Pictures)</h4>
+<p class="text-label-sm font-label-sm text-outline uppercase tracking-wide mb-1">Setup</p>
+<p class="text-on-surface-variant text-body-md text-[15px] mb-3">Take 3 to 4 of her known target word cards (MUSIC, SNACK, BUBBLES). Keep the actual items hidden in cupboards or drawers out of view.</p>
+<p class="text-label-sm font-label-sm text-outline uppercase tracking-wide mb-1">How to play</p>
+<ol class="list-decimal list-inside space-y-1 text-on-surface-variant text-body-md text-[15px]">
+<li class="pl-1">Lay out 3 text-only cards on the table.</li>
+<li class="pl-1">Tell her in an excited tone: "Let’s find something!"</li>
+<li class="pl-1">Point to or hand her one specific card (e.g., BUBBLES) without pointing toward where the item is.</li>
+<li class="pl-1">Have her carry the text card with her across the room to the cupboard where the bubbles are kept to "trade" the card for the item.</li>
+</ol>
+<div class="mt-4 pt-4 border-t border-outline-variant/40">
+<p class="text-label-sm font-label-sm text-secondary uppercase tracking-wide mb-1">Why this works</p>
+<p class="text-on-surface-variant text-body-md text-[15px]">She has to hold the pure visual representation of the word in her working memory without seeing the physical item first.</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-[16px] atmospheric-shadow p-6 flex flex-col">
+<div class="w-9 h-9 rounded-full bg-primary-container/15 text-primary flex items-center justify-center font-semibold mb-3">2</div>
+<h4 class="font-headline-md text-[17px] text-on-surface mb-2">The "Multi-Choice" Table Matrix (3–4 Distractors)</h4>
+<p class="text-label-sm font-label-sm text-outline uppercase tracking-wide mb-1">Setup</p>
+<p class="text-on-surface-variant text-body-md text-[15px] mb-3">Create 4 text-only cards (e.g., WATER, JUICE, MILK, APPLE).</p>
+<p class="text-label-sm font-label-sm text-outline uppercase tracking-wide mb-1">How to play</p>
+<ol class="list-decimal list-inside space-y-1 text-on-surface-variant text-body-md text-[15px]">
+<li class="pl-1">Lay all 4 cards flat on the table in a grid.</li>
+<li class="pl-1">Ask her: "Where says JUICE?" or play a sound snippet related to one item.</li>
+<li class="pl-1">Do not point, give eye-gaze cues, or show a picture.</li>
+<li class="pl-1">Wait up to 5–8 seconds for her to visually scan the 4 options and tap/hand you the correct word card.</li>
+<li class="pl-1">Celebrate with high enthusiasm when she isolates the correct target amidst 3 distractors!</li>
+</ol>
+
+</div>
+<div class="bg-surface-container-lowest rounded-[16px] atmospheric-shadow p-6 flex flex-col">
+<div class="w-9 h-9 rounded-full bg-primary-container/15 text-primary flex items-center justify-center font-semibold mb-3">3</div>
+<h4 class="font-headline-md text-[17px] text-on-surface mb-2">Font & Environment Generalization ("Same Word, Different Look")</h4>
+<p class="text-label-sm font-label-sm text-outline uppercase tracking-wide mb-1">Setup</p>
+<p class="text-on-surface-variant text-body-md text-[15px] mb-3">Choose 3 of her master sight words. Prepare them in 3 different formats: a print card (sans-serif font like Arial), a digital screen (typed on a tablet notes app), and a whiteboard/chalkboard (handwritten in block letters).</p>
+<p class="text-label-sm font-label-sm text-outline uppercase tracking-wide mb-1">How to play</p>
+<ol class="list-decimal list-inside space-y-1 text-on-surface-variant text-body-md text-[15px]">
+<li class="pl-1">Show her the word on the whiteboard (PARK).</li>
+<li class="pl-1">Ask her to match it to the same word typed on the tablet screen.</li>
+<li class="pl-1">Practice identifying her target words when out in public (e.g., pointing to the word EXIT or PUSH on doors, or PARK on a park sign).</li>
+</ol>
+<div class="mt-4 pt-4 border-t border-outline-variant/40">
+<p class="text-label-sm font-label-sm text-secondary uppercase tracking-wide mb-1">Why this works</p>
+<p class="text-on-surface-variant text-body-md text-[15px]">It breaks the rigidity of memorizing a single flashcard and teaches true abstract text processing.</p>
+</div>
+</div>
+</div>
+<div id="bridge-3-4-checklist" data-checklist class="bg-secondary-container/25 border border-secondary/30 rounded-[16px] p-6 scroll-mt-24">
+<div class="flex items-center justify-between gap-3 flex-wrap mb-1">
+<h4 class="font-headline-md text-[18px] text-secondary">Level 4 Qualification Checklist</h4>
+<span data-progress-text class="text-label-sm font-label-sm text-secondary"></span>
+</div>
+<p class="text-on-surface-variant text-body-md text-[15px] mb-3">She has successfully reached Level 4 when she can consistently pass these 4 checkpoints:</p>
+<div class="w-full h-2 bg-white/60 rounded-full overflow-hidden mb-4">
+<div data-progress-bar class="h-full bg-secondary transition-all duration-300" style="width:0%"></div>
+</div>
+<div class="space-y-1 mb-2">
+<label class="checklist-row flex items-start gap-3 p-3 rounded-lg transition-colors cursor-pointer">
+<input class="check-item mt-0.5" type="checkbox">
+<span class="checklist-label text-body-md text-[15px]"><span class="font-semibold text-on-surface">Expanded Sight Vocabulary</span><br><span class="text-on-surface-variant">She receptively identifies 10 to 15+ target printed words across her daily routine.</span></span>
+</label>
+<label class="checklist-row flex items-start gap-3 p-3 rounded-lg transition-colors cursor-pointer">
+<input class="check-item mt-0.5" type="checkbox">
+<span class="checklist-label text-body-md text-[15px]"><span class="font-semibold text-on-surface">Pure Text Processing (No Pictures Needed)</span><br><span class="text-on-surface-variant">When presented with text-only cards (no pictures or physical objects visible), she accurately selects or hands over the requested word card.</span></span>
+</label>
+<label class="checklist-row flex items-start gap-3 p-3 rounded-lg transition-colors cursor-pointer">
+<input class="check-item mt-0.5" type="checkbox">
+<span class="checklist-label text-body-md text-[15px]"><span class="font-semibold text-on-surface">Multi-Distractor Accuracy (3–4 Cards)</span><br><span class="text-on-surface-variant">When given a choice of 4 printed word cards on a table, she accurately picks the requested word at least 80% of the time.</span></span>
+</label>
+<label class="checklist-row flex items-start gap-3 p-3 rounded-lg transition-colors cursor-pointer">
+<input class="check-item mt-0.5" type="checkbox">
+<span class="checklist-label text-body-md text-[15px]"><span class="font-semibold text-on-surface">Cross-Context Generalization</span><br><span class="text-on-surface-variant">She recognizes her target words when presented in different fonts, formats (paper vs. screen), or handwriting styles.</span></span>
+</label>
+</div>
+<div data-progress-badge class="hidden mt-3 inline-flex items-center gap-2 bg-secondary text-on-secondary px-4 py-2 rounded-full text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-[18px]">celebration</span>Level 4 reached — ready for multi-word phrases!
+</div>
+</div>
+</section>
+<section id="bridge-4-5" class="py-section-gap max-w-container-max-width mx-auto px-margin-desktop scroll-mt-16">
+<span class="text-label-sm font-label-sm text-primary uppercase tracking-widest">Bridging Level 4 → Level 5 · Phase 1 Mastery</span>
+<h2 class="font-headline-md text-headline-md text-on-surface mt-1 mb-6">Core Focus: Reading Whole Gestalt Phrases</h2>
+<div class="bg-primary-fixed/25 border border-primary-fixed rounded-[16px] p-6 mb-8 grid grid-cols-1 md:grid-cols-2 gap-4">
+<div>
+<p class="text-label-sm font-label-sm text-on-primary-fixed-variant uppercase tracking-wide mb-1">Goal</p>
+<p class="text-on-surface text-body-md">Receptively comprehend multi-word Gestalt visual strips, track two-to-three word sequences left-to-right, and select target words to complete functional sentence blocks.</p>
+</div>
+<div>
+<p class="text-label-sm font-label-sm text-on-primary-fixed-variant uppercase tracking-wide mb-1">Rule</p>
+<p class="text-on-surface text-body-md">Always keep carrier phrases consistent (e.g., use I WANT, I SEE, LET'S GO) so her brain memorizes the carrier block and focuses her attention on the changing target word.</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter mb-8">
+<div class="bg-surface-container-lowest rounded-[16px] atmospheric-shadow p-6 flex flex-col">
+<div class="w-9 h-9 rounded-full bg-primary-container/15 text-primary flex items-center justify-center font-semibold mb-3">1</div>
+<h4 class="font-headline-md text-[17px] text-on-surface mb-2">The "Velcro Carrier Strip" Builder</h4>
+<p class="text-label-sm font-label-sm text-outline uppercase tracking-wide mb-1">Setup</p>
+<p class="text-on-surface-variant text-body-md text-[15px] mb-3">Create a rigid base board (a strip of laminate with velcro dots) divided into two slots: Slot 1 (fixed carrier gestalt) holds a printed card that says I WANT or LET'S GO; Slot 2 (target word choice) is a blank velcro spot.</p>
+<p class="text-label-sm font-label-sm text-outline uppercase tracking-wide mb-1">How to play</p>
+<ol class="list-decimal list-inside space-y-1 text-on-surface-variant text-body-md text-[15px]">
+<li class="pl-1">Place the fixed card I WANT in Slot 1.</li>
+<li class="pl-1">Lay out 3 text-only target cards on the table (WATER, SNACK, MUSIC).</li>
+<li class="pl-1">Ask: "What do we want?"</li>
+<li class="pl-1">She selects the target word (e.g., WATER) and sticks it into Slot 2.</li>
+<li class="pl-1">Sweep your finger across both blocks continuously left-to-right: "I WANT WATER!" and fulfill the request immediately.</li>
+</ol>
+<div class="mt-4 pt-4 border-t border-outline-variant/40">
+<p class="text-label-sm font-label-sm text-secondary uppercase tracking-wide mb-1">Why this works</p>
+<p class="text-on-surface-variant text-body-md text-[15px]">It teaches her how independent word blocks snap together visually to convey a complete multi-word thought.</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-[16px] atmospheric-shadow p-6 flex flex-col">
+<div class="w-9 h-9 rounded-full bg-primary-container/15 text-primary flex items-center justify-center font-semibold mb-3">2</div>
+<h4 class="font-headline-md text-[17px] text-on-surface mb-2">Receptive Sentence Discrimination ("Match the Phrase")</h4>
+<p class="text-label-sm font-label-sm text-outline uppercase tracking-wide mb-1">Setup</p>
+<p class="text-on-surface-variant text-body-md text-[15px] mb-3">Create two distinct carrier sentence strips: Strip A — [ LET'S GO ] [ OUTSIDE ]; Strip B — [ I WANT ] [ MUSIC ].</p>
+<p class="text-label-sm font-label-sm text-outline uppercase tracking-wide mb-1">How to play</p>
+<ol class="list-decimal list-inside space-y-1 text-on-surface-variant text-body-md text-[15px]">
+<li class="pl-1">Place both constructed strips side-by-side on the table.</li>
+<li class="pl-1">Point to Strip A and read it aloud with high intonation ("LET’S GO OUTSIDE!"). Point to Strip B and read it ("I WANT MUSIC!").</li>
+<li class="pl-1">Stand by the door or hold the iPad, and ask: "Which one says ‘Let’s go outside’?"</li>
+<li class="pl-1">She scans both strips, evaluates the entire sequence of text blocks, and hands you or points to Strip A.</li>
+</ol>
+<div class="mt-4 pt-4 border-t border-outline-variant/40">
+<p class="text-label-sm font-label-sm text-secondary uppercase tracking-wide mb-1">Why this works</p>
+<p class="text-on-surface-variant text-body-md text-[15px]">She is no longer just looking at one isolated word; her brain is processing multi-word sentence structure receptively.</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-[16px] atmospheric-shadow p-6 flex flex-col">
+<div class="w-9 h-9 rounded-full bg-primary-container/15 text-primary flex items-center justify-center font-semibold mb-3">3</div>
+<h4 class="font-headline-md text-[17px] text-on-surface mb-2">"Fill-in-the-Blank" Gestalt Reading Books</h4>
+<p class="text-label-sm font-label-sm text-outline uppercase tracking-wide mb-1">Setup</p>
+<p class="text-on-surface-variant text-body-md text-[15px] mb-3">Create a simple 4-page mini photo book using pictures of her favorite things/activities. On the bottom of each page, print a sentence frame with a missing blank, e.g. Page 1: "Look at the [ ____ ]!" (picture of Bluey); Page 2: "Look at the [ ____ ]!" (picture of a trampoline).</p>
+<p class="text-label-sm font-label-sm text-outline uppercase tracking-wide mb-1">How to play</p>
+<ol class="list-decimal list-inside space-y-1 text-on-surface-variant text-body-md text-[15px]">
+<li class="pl-1">Open Page 1. Hand her a small tray with 3 printed choice cards (BLUEY, JUICE, PARK).</li>
+<li class="pl-1">Read the page while sweeping your finger under the print: "Look at the..." (pause at the blank).</li>
+<li class="pl-1">She selects the BLUEY card and drops or tapes it directly into the blank frame.</li>
+<li class="pl-1">Read the whole completed sentence together aloud to finish the page before turning to the next one!</li>
+</ol>
+
+</div>
+</div>
+<div id="bridge-4-5-checklist" data-checklist class="bg-secondary-container/25 border border-secondary/30 rounded-[16px] p-6 scroll-mt-24">
+<div class="flex items-center justify-between gap-3 flex-wrap mb-1">
+<h4 class="font-headline-md text-[18px] text-secondary">Level 5 Qualification Checklist — Phase 1 Mastery</h4>
+<span data-progress-text class="text-label-sm font-label-sm text-secondary"></span>
+</div>
+<p class="text-on-surface-variant text-body-md text-[15px] mb-3">When she checks off every box here, she has officially mastered Phase 1 (Receptive Reading) and is 100% primed to begin Phase 2 (Expressive Writing)!</p>
+<div class="w-full h-2 bg-white/60 rounded-full overflow-hidden mb-4">
+<div data-progress-bar class="h-full bg-secondary transition-all duration-300" style="width:0%"></div>
+</div>
+<div class="space-y-1 mb-2">
+<label class="checklist-row flex items-start gap-3 p-3 rounded-lg transition-colors cursor-pointer">
+<input class="check-item mt-0.5" type="checkbox">
+<span class="checklist-label text-body-md text-[15px]"><span class="font-semibold text-on-surface">Multi-Word Block Construction</span><br><span class="text-on-surface-variant">Given a fixed carrier phrase (e.g., [ I WANT ]), she independently picks the correct target text card and attaches it to complete a 2-to-3 word sentence strip.</span></span>
+</label>
+<label class="checklist-row flex items-start gap-3 p-3 rounded-lg transition-colors cursor-pointer">
+<input class="check-item mt-0.5" type="checkbox">
+<span class="checklist-label text-body-md text-[15px]"><span class="font-semibold text-on-surface">Sentence Strip Discrimination</span><br><span class="text-on-surface-variant">Given 2 different complete text strips (e.g., [ I WANT JUICE ] vs [ LET'S GO PARK ]), she correctly identifies and selects the requested strip.</span></span>
+</label>
+<label class="checklist-row flex items-start gap-3 p-3 rounded-lg transition-colors cursor-pointer">
+<input class="check-item mt-0.5" type="checkbox">
+<span class="checklist-label text-body-md text-[15px]"><span class="font-semibold text-on-surface">Multi-Word Left-to-Right Eye Tracking</span><br><span class="text-on-surface-variant">Her eyes track smoothly from left to right across a full 2–3 word printed phrase as you sweep your finger across it.</span></span>
+</label>
+<label class="checklist-row flex items-start gap-3 p-3 rounded-lg transition-colors cursor-pointer">
+<input class="check-item mt-0.5" type="checkbox">
+<span class="checklist-label text-body-md text-[15px]"><span class="font-semibold text-on-surface">Text-Only Sentence Comprehension</span><br><span class="text-on-surface-variant">She understands the full meaning of a constructed text strip without relying on picture symbols attached to the sentence frame.</span></span>
+</label>
+</div>
+<div data-progress-badge class="hidden mt-3 inline-flex items-center gap-2 bg-secondary text-on-secondary px-4 py-2 rounded-full text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-[18px]">celebration</span>Phase 1 mastered — ready for Phase 2!
+</div>
+</div>
+</section>
+
+<section class="max-w-container-max-width mx-auto px-margin-desktop pb-section-gap">
+<div class="bg-primary text-on-primary rounded-[20px] p-10 flex flex-col md:flex-row items-center gap-6 justify-between atmospheric-shadow">
+<div>
+<h3 class="font-headline-md text-[22px] mb-2">Ready for Phase 2?</h3>
+<p class="text-white/85 max-w-xl">Once she's checked off the Phase 1 Mastery checklist above, move on to Phase 2: Building Writing (Expressive Literacy).</p>
+</div>
+<a class="shrink-0 flex items-center gap-2 font-semibold bg-white text-primary px-6 py-3 rounded-full hover:gap-3 transition-all" href="phase2-writing.html" rel="noopener" target="_blank">Go to Phase 2 <span class="material-symbols-outlined">arrow_forward</span></a>
+</div>
+</section>
+</main>
+<footer class="bg-surface-container-low w-full py-section-gap mt-section-gap">
+<div class="flex flex-col items-center gap-4 px-margin-desktop max-w-container-max-width mx-auto text-center">
+<div class="font-display-lg text-xl text-primary">NeuroGrove</div>
+<p class="text-on-surface-variant max-w-md">Activities in this guide are adapted from a gestalt language processing (Natural Language Acquisition) teaching reference. They are general guidance, not a substitute for individualized support from a speech-language pathologist.</p>
+<p class="font-body-md text-body-md text-secondary">&copy; 2026 NeuroGrove. Designed for Cognitive Ease.</p>
+</div>
+</footer>
+
+<script>
+    function wireChecklist(root) {
+        var boxes = Array.prototype.slice.call(root.querySelectorAll('input[type="checkbox"]'));
+        var bar = root.querySelector('[data-progress-bar]');
+        var text = root.querySelector('[data-progress-text]');
+        var badge = root.querySelector('[data-progress-badge]');
+        function update() {
+            var total = boxes.length;
+            var checked = boxes.filter(function (b) { return b.checked; }).length;
+            var pct = total ? Math.round((checked / total) * 100) : 0;
+            if (bar) bar.style.width = pct + '%';
+            if (text) text.textContent = checked + ' of ' + total + ' complete';
+            if (badge) {
+                if (checked === total && total > 0) { badge.classList.remove('hidden'); }
+                else { badge.classList.add('hidden'); }
+            }
+        }
+        boxes.forEach(function (b) { b.addEventListener('change', update); });
+        update();
+    }
+    document.querySelectorAll('[data-checklist]').forEach(wireChecklist);
+</script>
+
+</body>
+</html>
