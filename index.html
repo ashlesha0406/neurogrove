@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>SanctuaryEdu | Empowering Neurodivergent Learning</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=Inter:wght@100..900&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "error-container": "#ffdad6",
+                    "on-background": "#191c1d",
+                    "tertiary": "#605584",
+                    "on-tertiary-fixed": "#1f133f",
+                    "on-primary-container": "#fefcff",
+                    "surface-container-high": "#e7e8e9",
+                    "primary-container": "#5371c2",
+                    "on-tertiary": "#ffffff",
+                    "primary": "#3958a7",
+                    "background": "#f8f9fa",
+                    "tertiary-fixed": "#e8ddff",
+                    "on-secondary": "#ffffff",
+                    "surface-container-highest": "#e1e3e4",
+                    "on-secondary-fixed": "#002110",
+                    "on-primary-fixed": "#001849",
+                    "on-error-container": "#93000a",
+                    "secondary-fixed-dim": "#98d4ac",
+                    "surface-tint": "#3b5ba9",
+                    "on-primary": "#ffffff",
+                    "inverse-on-surface": "#f0f1f2",
+                    "on-secondary-fixed-variant": "#165132",
+                    "on-error": "#ffffff",
+                    "surface-variant": "#e1e3e4",
+                    "tertiary-fixed-dim": "#cdbff5",
+                    "secondary-fixed": "#b4f0c7",
+                    "outline": "#747682",
+                    "surface": "#f8f9fa",
+                    "primary-fixed": "#dae1ff",
+                    "on-surface": "#191c1d",
+                    "surface-bright": "#f8f9fa",
+                    "surface-container": "#edeeef",
+                    "on-surface-variant": "#444651",
+                    "outline-variant": "#c4c6d3",
+                    "on-primary-fixed-variant": "#204290",
+                    "on-tertiary-container": "#fffbff",
+                    "secondary-container": "#b1edc4",
+                    "surface-container-low": "#f3f4f5",
+                    "on-secondary-container": "#356e4c",
+                    "primary-fixed-dim": "#b3c5ff",
+                    "surface-dim": "#d9dadb",
+                    "secondary": "#316948",
+                    "inverse-surface": "#2e3132",
+                    "on-tertiary-fixed-variant": "#4b406d",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary-container": "#7a6d9e",
+                    "error": "#ba1a1a",
+                    "inverse-primary": "#b3c5ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-mobile": "16px",
+                    "margin-desktop": "40px",
+                    "section-gap": "80px",
+                    "container-max-width": "1200px",
+                    "gutter": "24px",
+                    "unit": "8px"
+            },
+            "fontFamily": {
+                    "display-lg": ["Montserrat"],
+                    "label-sm": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-md": ["Montserrat"],
+                    "display-lg-mobile": ["Montserrat"],
+                    "body-md": ["Inter"]
+            },
+            "fontSize": {
+                    "display-lg": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "label-sm": ["13px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0.02em", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                    "display-lg-mobile": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "letterSpacing": "0.01em", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .atmospheric-shadow {
+            box-shadow: 0 20px 40px rgba(57, 88, 167, 0.05);
+        }
+        .soft-glass {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body-md text-on-surface">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md shadow-[0_20px_40px_rgba(57,88,167,0.05)]">
+<div class="flex justify-between items-center h-20 px-margin-desktop max-w-container-max-width mx-auto">
+<div class="font-display-lg text-display-lg font-semibold text-primary tracking-tight">SanctuaryEdu</div>
+<!-- Desktop Navigation -->
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-primary font-semibold border-b-2 border-primary pb-1 font-label-sm text-label-sm" href="#">Home</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-sm text-label-sm" href="#">Activities</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-sm text-label-sm" href="#">Resources</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-sm text-label-sm" href="#">Progress</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-sm text-label-sm" href="#">Community</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="p-2 hover:bg-primary-container/10 rounded-lg transition-all active:scale-95">
+<span class="material-symbols-outlined text-primary">notifications</span>
+</button>
+<button class="p-2 hover:bg-primary-container/10 rounded-lg transition-all active:scale-95">
+<span class="material-symbols-outlined text-primary">settings</span>
+</button>
+<div class="w-10 h-10 rounded-full bg-primary-fixed overflow-hidden border-2 border-surface shadow-sm">
+<img alt="A professional close-up portrait of a warm, smiling parent with a soft-focus interior background." class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIHACVcPbEu8wH3iotMB3evF0BhGxqAWENpQkWrVxfN4QB5qIWUtia4SuEVPw9NheXUCadxbidY8iZoJO-TOpinwMWMnYs2-rmTPCNDBdW2Gzkgd7d98siBxdJsliOBYSRbXIsJRbrYDt6lKNzBb6ea3N0Czt5zv1fA-v3tfScIP7dId0qgVtB1BWDGFCBd8MXGmLDvAKQqJL5DBCPOBFJytSeE2OW8yeNhRGYAIiSh8GiDPiROVjJXg">
+</div>
+</div>
+</div>
+</header>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative overflow-hidden bg-surface-container-lowest py-section-gap">
+<div class="max-w-container-max-width mx-auto px-margin-desktop flex flex-col md:flex-row items-center gap-12">
+<div class="flex-1 space-y-6 text-center md:text-left z-10">
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-primary tracking-tight max-w-xl">
+                        Empowering Your Child's Learning Journey
+                    </h1>
+<p class="text-body-lg text-on-surface-variant max-w-lg leading-relaxed">
+                        A calm, supportive space with reading, writing, and vocabulary activities for children who are gestalt language processors — helping bridge communication with empathy and cognitive ease.
+                    </p>
+</div>
+<div class="flex-1 relative">
+<div class="w-full aspect-square rounded-[32px] overflow-hidden atmospheric-shadow bg-secondary-container/20">
+<img alt="A peaceful and minimalist digital illustration of a parent and child sitting together in a sunlit room, engaged in a gentle reading activity." class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRs3TKhg6VTZGKjIV8eizOtgJvvLMpqItTq0_8j872X7z77_OVIsM7hgxuRBuvnUMCqAhcimSgrJ1M1UtdKPCVB4U0TIWUC9DCnesU67lHsFeuUA57iTplJT5H5pEH1tUPzcjZmZZYT8nLAHfcbFJFdzI0EfEaDe87Hea8NJcxjkbqOTkmN8aPBWHul-NQQakC_CQjzwoEd-SMYnptVOUoWInIGfZu8n67vjKDgWQGHRg5VaKVRTeE8g">
+</div>
+<!-- Decorative element -->
+<div class="absolute -bottom-6 -left-6 w-32 h-32 bg-tertiary-fixed rounded-full blur-2xl opacity-60"></div>
+<div class="absolute -top-6 -right-6 w-48 h-48 bg-primary-fixed rounded-full blur-3xl opacity-40"></div>
+</div>
+</div>
+</section>
+<!-- Activity Grid -->
+<section class="py-section-gap max-w-container-max-width mx-auto px-margin-desktop">
+<div class="text-center mb-12">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-2">Curated Activities</h2>
+<p class="text-body-md text-on-surface-variant">Daily practices to support reading, writing, and vocabulary growth.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Reading Card -->
+<div class="activity-card bg-surface-container-lowest p-8 rounded-[16px] atmospheric-shadow transition-transform duration-300 hover:-translate-y-1 hover:scale-[1.02] cursor-pointer group">
+<div class="w-14 h-14 bg-primary-container/10 text-primary rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-3xl">auto_stories</span>
+</div>
+<h3 class="font-headline-md text-[20px] text-primary mb-3">Reading Adventures</h3>
+<p class="text-on-surface-variant text-body-md">Interactive storytelling designed for visual learners.</p>
+</div>
+<!-- Writing Card -->
+<div class="activity-card bg-surface-container-lowest p-8 rounded-[16px] atmospheric-shadow transition-transform duration-300 hover:-translate-y-1 hover:scale-[1.02] cursor-pointer group">
+<div class="w-14 h-14 bg-secondary-container/20 text-secondary rounded-2xl flex items-center justify-center mb-6 group-hover:bg-secondary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-3xl">edit_note</span>
+</div>
+<h3 class="font-headline-md text-[20px] text-secondary mb-3">Expressive Writing</h3>
+<p class="text-on-surface-variant text-body-md">Creative prompts that encourage emotional expression.</p>
+</div>
+<!-- Speech Card -->
+<div class="activity-card bg-surface-container-lowest p-8 rounded-[16px] atmospheric-shadow transition-transform duration-300 hover:-translate-y-1 hover:scale-[1.02] cursor-pointer group">
+<div class="w-14 h-14 bg-tertiary-fixed/40 text-tertiary rounded-2xl flex items-center justify-center mb-6 group-hover:bg-tertiary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-3xl">record_voice_over</span>
+</div>
+<h3 class="font-headline-md text-[20px] text-tertiary mb-3">Clear Speech</h3>
+<p class="text-on-surface-variant text-body-md">Phonetic exercises with gentle visual feedback.</p>
+</div>
+<!-- Vocabulary Card -->
+<div class="activity-card bg-surface-container-lowest p-8 rounded-[16px] atmospheric-shadow transition-transform duration-300 hover:-translate-y-1 hover:scale-[1.02] cursor-pointer group">
+<div class="w-14 h-14 bg-error-container/30 text-primary rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary-container group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-3xl">map</span>
+</div>
+<h3 class="font-headline-md text-[20px] text-on-surface mb-3">Daily Vocabulary</h3>
+<p class="text-on-surface-variant text-body-md">Building confidence through recurring word play.</p>
+</div>
+</div>
+</section>
+<!-- Resources Section -->
+<section class="bg-surface-container-low py-section-gap">
+<div class="max-w-container-max-width mx-auto px-margin-desktop">
+<div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
+<div class="text-left">
+<span class="text-label-sm font-label-sm text-primary uppercase tracking-widest">Knowledge Base</span>
+<h2 class="font-headline-md text-headline-md text-on-surface mt-2">Most Popular Resources</h2>
+</div>
+<a class="text-primary font-semibold flex items-center gap-2 hover:underline" href="#">
+                        View All Resources <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+<div class="space-y-6">
+<!-- Resource Card 1 -->
+<div class="bg-surface-container-lowest p-6 rounded-2xl atmospheric-shadow flex flex-col md:flex-row gap-6 items-center group cursor-pointer border border-transparent hover:border-primary-fixed transition-all">
+<div class="w-full md:w-48 h-32 rounded-xl overflow-hidden bg-outline-variant flex-shrink-0">
+<img alt="A clean, top-down photography shot of sensory play objects: smooth river stones, colorful kinetic sand, and wooden blocks arranged neatly on a white table." class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCE9kAdV7hcicusidjBxcS-m97B5IlrKb9TLuQ-2-P28CArzffcyrVX140uQbSyxtjyVrHhTaisfIuC3aIWUjUwXhprFLUM5Q9nVX2z_EtPs_SDUvGeDw8BfrDvsJGf3tQm-qwanUQ1i_GDE3_PA-VQTCKxIC5zsr6080EOz9jn0MCzKP0xbE0ID45uaT4NpBmE2nP1yIA5oWuzxxmOEq7QUcc5C09Vei1N_G6pWtHuvfx3xW-dUcw-8A">
+</div>
+<div class="flex-1">
+<div class="flex items-center gap-3 mb-2">
+<span class="px-3 py-1 bg-secondary-container/30 text-on-secondary-container text-label-sm font-label-sm rounded-full">Guides</span>
+<span class="text-label-sm text-outline">12 min read</span>
+</div>
+<h3 class="font-headline-md text-[22px] text-on-surface group-hover:text-primary transition-colors">Sensory Play Ideas for Home</h3>
+<p class="text-on-surface-variant text-body-md mt-2">Creative ways to engage your child's senses using everyday household items.</p>
+</div>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-primary group-hover:translate-x-2 transition-all">chevron_right</span>
+</div>
+<!-- Resource Card 2 -->
+<div class="bg-surface-container-lowest p-6 rounded-2xl atmospheric-shadow flex flex-col md:flex-row gap-6 items-center group cursor-pointer border border-transparent hover:border-primary-fixed transition-all">
+<div class="w-full md:w-48 h-32 rounded-xl overflow-hidden bg-outline-variant flex-shrink-0">
+<img alt="A minimalist infographic style image showing two stylized figures communicating with simple speech bubbles and heart icons between them." class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvzmaUtmGNEaPKPi1jeTfUp9ADy16bJn1Pk1axx1qUzhfRaHVIy77qTYidxUrYshUz5DbncqbQk20LpeF7lvMqejBufRgxzGoQovXVCJC3XaAm5nBuzca9ZIlcBBXGTkDup1au8syPbzC9maA_ri96iS4UvdgGWlLsz4_hVj9YpxexoTM9gAoxlPd3Vgr2sXkqqr50N_XHzedWxn6tKwVi36RZs-7_U2_dEnVvcr4ZxtOApB-z5CnadQ">
+</div>
+<div class="flex-1">
+<div class="flex items-center gap-3 mb-2">
+<span class="px-3 py-1 bg-primary-fixed/30 text-on-primary-fixed-variant text-label-sm font-label-sm rounded-full">Communication</span>
+<span class="text-label-sm text-outline">8 min read</span>
+</div>
+<h3 class="font-headline-md text-[22px] text-on-surface group-hover:text-primary transition-colors">Effective Communication Tips</h3>
+<p class="text-on-surface-variant text-body-md mt-2">Evidence-based strategies to foster clearer interactions and reduce frustration.</p>
+</div>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-primary group-hover:translate-x-2 transition-all">chevron_right</span>
+</div>
+<!-- Resource Card 3 -->
+<div class="bg-surface-container-lowest p-6 rounded-2xl atmospheric-shadow flex flex-col md:flex-row gap-6 items-center group cursor-pointer border border-transparent hover:border-primary-fixed transition-all">
+<div class="w-full md:w-48 h-32 rounded-xl overflow-hidden bg-outline-variant flex-shrink-0">
+<img alt="A calming image of a digital tablet showing a simple, colorful daily schedule with pictograms." class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDU4Ad8fmzkECJnRPl7LHk_gFC0h4e-H9rdDfiwbFSvSpykLxij4sasDn9SnJr7sj76dVXPj25sDS5K0CS6uYSFZx4k8OUyUwK693Il9gChxhJiQLdPubrg8OaK-aorLn9bvEMIL-T65EdDsAZUgx8EAPcOI6HxVeZKwt4hXHzg1v8wPegvtFtdnkipB2gAvZJcxP222eaEkt8wUC98e20P9MK8RwmBZLaiaqT6BDw4v8x0S6DFUdLbIw">
+</div>
+<div class="flex-1">
+<div class="flex items-center gap-3 mb-2">
+<span class="px-3 py-1 bg-tertiary-fixed/30 text-on-tertiary-fixed-variant text-label-sm font-label-sm rounded-full">Routines</span>
+<span class="text-label-sm text-outline">15 min read</span>
+</div>
+<h3 class="font-headline-md text-[22px] text-on-surface group-hover:text-primary transition-colors">Creating Predictable Routines</h3>
+<p class="text-on-surface-variant text-body-md mt-2">How structured schedules can provide comfort and security for your child.</p>
+</div>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-primary group-hover:translate-x-2 transition-all">chevron_right</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-low w-full py-section-gap mt-section-gap">
+<div class="flex flex-col md:flex-row justify-between items-center gap-gutter px-margin-desktop max-w-container-max-width mx-auto">
+<div class="space-y-4 text-center md:text-left">
+<div class="font-display-lg text-display-lg text-primary">SanctuaryEdu</div>
+<p class="text-on-surface-variant max-w-xs">A sanctuary for neurodivergent growth and caregiver empowerment.</p>
+<p class="font-body-md text-body-md text-secondary">© 2026 SanctuaryEdu. Designed for Cognitive Ease.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-8">
+<div class="flex flex-col gap-3">
+<span class="font-bold text-on-surface">Platform</span>
+<a class="text-on-surface-variant hover:text-secondary transition-colors font-body-md text-body-md" href="#">Activities</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors font-body-md text-body-md" href="#">Resources</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors font-body-md text-body-md" href="#">Progress</a>
+</div>
+<div class="flex flex-col gap-3">
+<span class="font-bold text-on-surface">Support</span>
+<a class="text-on-surface-variant hover:text-secondary transition-colors font-body-md text-body-md" href="#">Accessibility</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors font-body-md text-body-md" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors font-body-md text-body-md" href="#">Support</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors font-body-md text-body-md" href="#">Contact</a>
+</div>
+</div>
+<div class="flex gap-4">
+<button class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center hover:bg-primary-fixed transition-colors">
+<span class="material-symbols-outlined text-primary">share</span>
+</button>
+<button class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center hover:bg-primary-fixed transition-colors">
+<span class="material-symbols-outlined text-primary">mail</span>
+</button>
+</div>
+</div>
+</footer>
+<!-- Mobile Bottom NavBar -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full h-20 flex justify-around items-center px-4 pb-safe bg-surface z-50 shadow-[0_-10px_30px_rgba(57,88,167,0.08)]">
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-5 py-1 scale-110 transition-transform" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-sm text-label-sm">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant active:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined">menu_book</span>
+<span class="font-label-sm text-label-sm">Learn</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant active:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined">auto_stories</span>
+<span class="font-label-sm text-label-sm">Library</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant active:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-sm text-label-sm">Profile</span>
+</a>
+</nav>
+<script>
+        // Micro-interactions for activity cards
+        document.querySelectorAll('.activity-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-4px)';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body>
+</html>
